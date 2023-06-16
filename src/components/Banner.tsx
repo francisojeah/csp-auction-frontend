@@ -14,7 +14,7 @@ const Banner = () => {
           </h1>
           <p className="max-w-[480px] mb-8 font-semibold">
             Join the CSP Silent Auction, an art event for a great cause. Bid on
-            diverse artwork, support CSP's mission, and engage with fellow art
+            diverse artwork, support the mission of CSP, and engage with fellow art
             enthusiasts. Acquire remarkable pieces while making a positive
             impact.
           </p>
