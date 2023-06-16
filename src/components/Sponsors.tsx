@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Sponsors = () => {
   return (
-    <div className="px-[30px] py-6 max-w-[1170px] mx-auto flex flex-row justify-between gap-4 lg:gap-x-3 relative lg:-top-4 lg:shadow-1 lg:bg-transparent lg:backdrop-blur ">
+    <div className="px-[30px] py-6 max-w-[1170px] mx-auto flex flex-row justify-between gap-4 lg:gap-x-16 relative lg:-top-4 lg:shadow-1 lg:bg-transparent lg:backdrop-blur ">
       <div>
         <Image
           src={Imagess.CspLogo}
@@ -32,7 +32,7 @@ const Sponsors = () => {
           width="0"
           height="0"
           sizes="100vw"
-          className="w-full h-full object-cotain"
+          className="w-full h-full object-contain"
         />
       </div>
     </div>

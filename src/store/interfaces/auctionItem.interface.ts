@@ -89,6 +89,7 @@ export interface AuctionItemProps {
     minimum_bid?: number;
     current_bid?: number;
     bid_increment?: number;
+    
     // bidder?: Types.ObjectId;
     is_closed?: boolean;
     // user?: Types.ObjectId;

@@ -22,7 +22,8 @@ const Banner = () => {
           <div className="flex items-center gap-6">
             <Link
               className="bg-[#0b469c] hover:bg-[#0a3576] text-white px-4 py-3 rounded-lg transition"
-              href="/signup"
+              href="#ail"
+              
             >
               Start Bidding
             </Link>
