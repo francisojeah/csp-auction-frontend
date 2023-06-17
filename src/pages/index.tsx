@@ -1,13 +1,11 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import SignUp from "./signup";
 import Homee from "./homee";
 import { getArtWorks } from "../pages/api/sheets";
-// import AddItem from "@/components/AddItem";
 
-const inter = Inter({ subsets: ["latin"] });
+type Props = {
+  items: any;
+};
 
-export default function Home({ items }: any) {
+export default function Home({ items }: Props) {
   return (
     <main>
       <Homee items={items} />

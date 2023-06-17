@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cspxysma.art
+
+# Sitemaps
+Sitemap: https://cspxysma.art/sitemap.xml

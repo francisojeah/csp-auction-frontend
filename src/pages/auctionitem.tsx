@@ -95,7 +95,7 @@ const AuctionItem = ({ items }: Props) => {
                     alert("You can't bid less than the current price");
                   } else {
                     <Link
-                      href={`/login?id=${items.id}?currentbid=${bidd}`}
+                      href={`/login?id=${items.id}&currentbid=${bidd}`}
                     ></Link>;
                   }
                 }}

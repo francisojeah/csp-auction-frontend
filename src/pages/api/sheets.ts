@@ -1,6 +1,5 @@
 import Imagess from '@/constants/imagess';
 import { google } from 'googleapis';
-require('dotenv').config()
 
 const testting = (id: string) => {
 
@@ -139,42 +138,6 @@ export async function getArtById(id: string) {
     return [];
 }
 
-// export const updateArtwork = async (
-//     id: string,
-//     currentBid: number,
-//     bidIncrement: number,
-//     bidder: string
-// ) => {
-//     try {
-//         const target = ['https://www.googleapis.com/auth/spreadsheets'];
-//         const jwt = new google.auth.JWT(
-//             process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-//             undefined,
-//             (process.env.GOOGLE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
-//             target
-//         );
-
-//         const sheets = google.sheets({ version: 'v4', auth: jwt });
-
-//         const range = `ArtWork!F${id}:H${id}`;
-//         const values = [[currentBid, bidIncrement, bidder]];
-
-//         var request = {
-//             majorDimension: "ROWS",
-//             values
-//         }
-//         sheets.spreadsheets.values.update({ spreadsheetId: process.env.GOOGLE_SHEET_ID_1, range, valueInputOption: "PAW" });
-
-//         const response = await sheets.spreadsheets.values.update({
-//             spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
-//             range,
-//             // valueInputOption: 'RAW',
-//             resource: { values },
-//         });
-//     } catch (err) {
-//         console.log(err);
-//     }
-// };
 
 export const updateArtwork = async (
     id: any,

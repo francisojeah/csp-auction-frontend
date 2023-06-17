@@ -7,7 +7,9 @@ import Sponsors from "@/components/Sponsors";
 import moment from "moment";
 import React from "react";
 
-const Homee = ({ items }: any) => {
+
+
+const Homee = ( {items} : any) => {
   return (
     <>
       <NavBar />

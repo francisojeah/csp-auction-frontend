@@ -6,18 +6,18 @@ import { useRouter } from "next/router";
 import { updateArtwork } from "./api/sheets";
 import Link from "next/link";
 
-
+type Props = {
+  currentBid: any;
+  id: any;
+};
 
 export interface AuthProps {
   email?: string;
   password?: string;
 }
 
-const Login = () => {
+const Login = ({ currentBid, id }: Props) => {
   const router = useRouter();
-  let{ currentBid, id } = router.query;
-  currentBid = currentBid?.toString();
-  id = id?.toString();
 
   const [email, setEmail] = useState("");
 
@@ -181,7 +181,7 @@ const Login = () => {
                 <button
                   type="submit"
                   className="w-full text-white bg-[#0b469c] font-semibold my-2 rounded-md p-4 text-center flex items-center justify-center cursor-pointer"
-                  onClick={() => updateArtwork(id, currentBid, email)}
+                  // onClick={() => updateArtwork(id, currentBid, email)}
                 >
                   Login
                 </button>
@@ -205,3 +205,20 @@ export default Login;
 
 // #46afe0
 
+export async function getServerSideProps(context: any) {
+  context.res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=300, stale-while-revalidate=360"
+  );
+  const { query } = context;
+  const { id, currentBid } = query;
+
+  // const update = await updateArtwork(id, currentBid, email);
+
+  return {
+    props: {
+      id: id.slice(1, id.length),
+      currentBid: currentBid.slice(1, currentBid.length),
+    },
+  };
+}
