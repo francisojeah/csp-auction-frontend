@@ -14,16 +14,15 @@ const Banner = () => {
           </h1>
           <p className="max-w-[480px] mb-8 font-semibold">
             Join the CSP Silent Auction, an art event for a great cause. Bid on
-            diverse artwork, support the mission of CSP, and engage with fellow art
-            enthusiasts. Acquire remarkable pieces while making a positive
+            diverse artwork, support the mission of CSP, and engage with fellow
+            art enthusiasts. Acquire remarkable pieces while making a positive
             impact.
           </p>
 
           <div className="flex items-center gap-6">
             <Link
               className="bg-[#0b469c] hover:bg-[#0a3576] text-white px-4 py-3 rounded-lg transition"
-              href="#ail"
-              
+              href="#auction"
             >
               Start Bidding
             </Link>

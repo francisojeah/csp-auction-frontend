@@ -89,7 +89,6 @@ const CountdownTimer: React.FC<{ eventTime: Moment }> = ({ eventTime }) => {
             </>
           ) : (
             <>
-              <p className="text-lg">Count to Auction</p>
               <p className="lg:text-6xl mb-8 sm:text-4xl text-xl font-semibold">
                 {' '}
                 {countdown}
