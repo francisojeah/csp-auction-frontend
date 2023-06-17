@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import Imagess from "../constants/imagess";
 
 import { useRouter } from "next/router";
-import { updateArtwork } from "./api/sheets";
+import { updateArtwork } from "../pages/api/sheets";
 import Link from "next/link";
 
 export interface LoginProps {
@@ -21,7 +21,6 @@ const Login = ({ currentBid, id }: LoginProps) => {
   const [email, setEmail] = useState("");
 
   // const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
-
 
   // const onLogin = (e: any) => {
   //   e.preventDefault();
@@ -181,7 +180,7 @@ const Login = ({ currentBid, id }: LoginProps) => {
                 <button
                   type="submit"
                   className="w-full text-white bg-[#0b469c] font-semibold my-2 rounded-md p-4 text-center flex items-center justify-center cursor-pointer"
-                  onClick={()=>updateArtwork(id, currentBid, email)}
+                  onClick={() => updateArtwork(id, currentBid, email)}
                 >
                   Login
                 </button>

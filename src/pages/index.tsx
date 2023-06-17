@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import Login from "./login";
+import Login from "@/components/login";
 import SignUp from "./signup";
 import Homee from "./homee";
-import {getArtWorks } from '../pages/api/sheets';
+import { getArtWorks } from "../pages/api/sheets";
 // import AddItem from "@/components/AddItem";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,8 +22,6 @@ export async function getServerSideProps(context: any) {
     "public, s-maxage=300, stale-while-revalidate=360"
   );
   const items = await getArtWorks();
-    
-  
 
   return {
     props: {
@@ -31,4 +29,3 @@ export async function getServerSideProps(context: any) {
     },
   };
 }
-
