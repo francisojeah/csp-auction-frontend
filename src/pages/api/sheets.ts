@@ -177,9 +177,9 @@ export async function getArtById(id: string) {
 // };
 
 export const updateArtwork = async (
-    id: string,
-    currentBid: string,
-    bidder: string
+    id: any,
+    currentBid: any,
+    bidder: any
 ) => {
     let bidIncrement = 0;
     try {

@@ -6,18 +6,18 @@ import { useRouter } from "next/router";
 import { updateArtwork } from "./api/sheets";
 import Link from "next/link";
 
-type Props = {
-  currentBid: string;
-  id: string;
-};
+
 
 export interface AuthProps {
   email?: string;
   password?: string;
 }
 
-const Login = ({ currentBid, id }: Props) => {
+const Login = () => {
   const router = useRouter();
+  let{ currentBid, id } = router.query;
+  currentBid = currentBid?.toString();
+  id = id?.toString();
 
   const [email, setEmail] = useState("");
 
@@ -204,18 +204,4 @@ export default Login;
 // #0b469c
 
 // #46afe0
-export async function getServerSideProps(context: any) {
-  context.res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=300, stale-while-revalidate=360"
-  );
-  const { query } = context;
-  const { id, currentbid } = query;
 
-  return {
-    props: {
-      id,
-      currentbid,
-    },
-  };
-}
