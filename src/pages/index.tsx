@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import Login from "@/components/login";
+import Login from "@/components/Login";
 import SignUp from "./signup";
 import Homee from "./homee";
 import { getArtWorks } from "../pages/api/sheets";
