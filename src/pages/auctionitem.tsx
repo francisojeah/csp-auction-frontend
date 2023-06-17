@@ -1,7 +1,7 @@
 import Imagess from "@/constants/imagess";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaGavel } from "react-icons/fa";
 import { GetServerSideProps, NextPage } from "next";
 import NavBar from "@/components/NavBar";
@@ -12,15 +12,25 @@ import { getArtById, getArtWorks } from "./api/sheets";
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
 import { AuctionItemProps } from "@/store/interfaces/auctionItem.interface";
+import Login from "./login";
 
 type Props = {
-  items: any
-}
+  items: any;
+};
 
-const AuctionItem = ({items}:Props) => {
+const AuctionItem = ({ items }: Props) => {
   // const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
   const sharedSport = useSelector((state: RootState) => state.string1);
   const router = useRouter();
+  const [bidd, setBidd] = useState("");
+
+  const oncli = () => {
+    if (bidd == "" || bidd <= items.currentBid) {
+      alert("You can't bid less than the current price");
+    } else {
+      <Login currentBid={bidd} id={items.id} />;
+    }
+  };
 
   return (
     <>
@@ -80,10 +90,10 @@ const AuctionItem = ({items}:Props) => {
           <div className="flex lg:flex-row items-center gap-8">
             <div className="w-full flex flex-col">
               <input
-                name="text"
+                name="bidd"
                 type="text"
-                // value={values['text']}
-                // onChange={(e) => setFieldValue('text', e.target.value)}
+                value={bidd}
+                onChange={(e) => setBidd(e.target.value)}
                 placeholder="Enter Bid"
                 className="w-full text-black my-2 py-3 px-3 rounded-xl bg-transparent border  border-black bg-white outline-none focus:outline-none"
               />

@@ -118,7 +118,7 @@ export async function getArtById(id: string) {
 
         const rows = response.data.values;
         if (rows?.length) {
-            const artwork:any = rows.find((row) => row[0] === id);
+            const artwork: any = rows.find((row) => row[0] === id);
             return ({
                 id: artwork[0],
                 title: artwork[1],
@@ -138,12 +138,49 @@ export async function getArtById(id: string) {
     return [];
 }
 
+// export const updateArtwork = async (
+//     id: string,
+//     currentBid: number,
+//     bidIncrement: number,
+//     bidder: string
+// ) => {
+//     try {
+//         const target = ['https://www.googleapis.com/auth/spreadsheets'];
+//         const jwt = new google.auth.JWT(
+//             process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+//             undefined,
+//             (process.env.GOOGLE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
+//             target
+//         );
+
+//         const sheets = google.sheets({ version: 'v4', auth: jwt });
+
+//         const range = `ArtWork!F${id}:H${id}`;
+//         const values = [[currentBid, bidIncrement, bidder]];
+
+//         var request = {
+//             majorDimension: "ROWS",
+//             values
+//         }
+//         sheets.spreadsheets.values.update({ spreadsheetId: process.env.GOOGLE_SHEET_ID_1, range, valueInputOption: "PAW" });
+
+//         const response = await sheets.spreadsheets.values.update({
+//             spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
+//             range,
+//             // valueInputOption: 'RAW',
+//             resource: { values },
+//         });
+//     } catch (err) {
+//         console.log(err);
+//     }
+// };
+
 export const updateArtwork = async (
     id: string,
-    currentBid: number,
-    bidIncrement: number,
+    currentBid: string,
     bidder: string
 ) => {
+    let bidIncrement = 0;
     try {
         const target = ['https://www.googleapis.com/auth/spreadsheets'];
         const jwt = new google.auth.JWT(
@@ -155,23 +192,18 @@ export const updateArtwork = async (
 
         const sheets = google.sheets({ version: 'v4', auth: jwt });
 
+        const spreadsheetId = process.env.GOOGLE_SHEET_ID_1;
+
         const range = `ArtWork!F${id}:H${id}`;
+
+        const valueInputOption = 'USER_ENTERED';
         const values = [[currentBid, bidIncrement, bidder]];
+        const resource = { values };
+        const params = { spreadsheetId, range, valueInputOption, resource };
+        const response = await sheets.spreadsheets.values.update(params);
+        return response;
 
-        var request = {
-            majorDimension: "ROWS",
-            values
-        }
-        sheets.spreadsheets.values.update({ spreadsheetId: process.env.GOOGLE_SHEET_ID_1, range, valueInputOption: "PAW" });
-
-        // const response = await sheets.spreadsheets.values.update({
-        //     spreadsheetId: process.env.GOOGLE_SHEET_ID_1,
-        //     range,
-        //     // valueInputOption: 'RAW',
-        //     resource: { values },
-        // });
     } catch (err) {
         console.log(err);
     }
-};
-
+}
