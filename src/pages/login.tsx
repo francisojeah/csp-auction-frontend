@@ -21,36 +21,42 @@ export interface AuthProps {
   password?: string;
 }
 
-const Login = () => {
+const Login = ({}) => {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
-  
-  const onLogin = (e: any) => {
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        router.push("/");
-        console.log(user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
-  };
+  // const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
 
-  const signInwithGoogle = async () => {
-    try {
-      await signInWithPopup(auth, googleProvider);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  const onLogin = () => {
+
+    
+  }
+  
+  // const onLogin = (e: any) => {
+  //   e.preventDefault();
+  //   signInWithEmailAndPassword(auth, email, password)
+  //     .then((userCredential) => {
+  //       // Signed in
+  //       const user = userCredential.user;
+  //       router.push("/");
+  //       console.log(user);
+  //     })
+  //     .catch((error) => {
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //       console.log(errorCode, errorMessage);
+  //     });
+  // };
+
+  // const signInwithGoogle = async () => {
+  //   try {
+  //     await signInWithPopup(auth, googleProvider);
+  //     router.push("/");
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
   //   // @ts-ignore
   //   const { data: googleApi, error } = useGetGoogleLinkQuery();
   //   const dispatch = useDispatch<Dispatch<any>>();
@@ -98,10 +104,10 @@ const Login = () => {
   //     }
   //   }, [userSlice.user, userSlice.user]);
   return (
-    <ConditionalRoute
-      redirectTo="/"
-      condition={currentUser ? false : true}
-    >
+    // <ConditionalRoute
+    //   redirectTo="/"
+    //   condition={currentUser ? true : false}
+    // >
       <div className="w-full h-screen flex items-start">
         <div className="hidden sm:w-1/2 sm:flex relative h-full flex-col">
           <div className="absolute top-[20%] left-[10%] flex flex-col">
@@ -219,7 +225,7 @@ const Login = () => {
             </div>
 
             <div className="w-full text-[#0b469c] my-2 bg-white border-1 border-black/40 font-semibold rounded-md p-4 text-center flex items-center justify-center ">
-              <div className="h-6 mr-2 flex items-center justify-center cursor-pointer" onClick={signInwithGoogle}>
+              <div className="h-6 mr-2 flex items-center justify-center cursor-pointer" >
                 <FaGoogle />
               </div>
               Sign In with Google
@@ -237,7 +243,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </ConditionalRoute>
+    // </ConditionalRoute>
   );
 };
 

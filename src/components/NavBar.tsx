@@ -4,11 +4,19 @@ import Link from "next/link";
 import React, { useContext } from "react";
 import { useRouter } from "next/router";
 import { AuthContext } from "@/AuthContext";
+import { RootState, updateSport1 } from "@/store/store";
+import { useDispatch, useSelector } from "react-redux";
 
 const NavBar = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const handleSportsBasketball = () => {
+    dispatch(updateSport1(""));
+  };
 
   const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
+
+  const sharedSport = useSelector((state: RootState) => state.string1);
 
   const handleLogout = () => {
     signOut(auth)
@@ -28,11 +36,11 @@ const NavBar = () => {
           <Link href="/">
             <div className="font-bold text-xl sm:text-3xl">CSP x YSMA</div>
           </Link>
-          {!currentUser ? (
+          {sharedSport == "" ? (
             <div className="flex items-center gap-6">
-              <Link className="hover:text-[#0b469c] transition" href="/login">
+              {/* <Link className="hover:text-[#0b469c] transition" href="/login">
                 Log in
-              </Link>
+              </Link> */}
               <Link
                 className="bg-[#0b469c] hover:bg-[#0a3576] text-white px-4 py-3 rounded-lg transition"
                 href="/signup"
@@ -44,7 +52,8 @@ const NavBar = () => {
             <div className="flex items-center gap-6">
               <Link
                 className="bg-[#0b469c] hover:bg-[#0a3576] text-white px-4 py-3 rounded-lg transition"
-                href="/" onClick={handleLogout}
+                onClick={() => location.reload()}
+                href={"/"}
               >
                 Log Out
               </Link>

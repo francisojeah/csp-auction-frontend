@@ -7,7 +7,7 @@ export interface AuctionItemProps {
     author?: string;
     photo: string;
     description?: string;
-    minimumBid?: string;
+    minimumBid: string;
     currentBid?: string;
     bidIncrement?: string;
     bidder?: string;

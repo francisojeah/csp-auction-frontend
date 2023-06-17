@@ -7,6 +7,8 @@ import { FaGavel } from "react-icons/fa";
 import Link from "next/link";
 import { AuthContext } from "@/AuthContext";
 import { User } from "firebase/auth";
+import { RootState } from "@/store/store";
+import { useSelector } from "react-redux";
 
 const AuctionItemTile: React.FC<AuctionItemProps> = ({
   title,
@@ -17,7 +19,8 @@ const AuctionItemTile: React.FC<AuctionItemProps> = ({
   minimumBid,
   bidder,
 }) => {
-  const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
+  // const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
+  const sharedSport = useSelector((state: RootState) => state.string1);
   return (
     <div className="bg-white shadow-1 p-5 rounded-lg  w-full max-w-[352px] mx-auto cursor-pointer hover:shadow-2xl transition ">
       <div className="flex-none rounded-lg border overflow-hidden shadow-lg bg-gray-200 order-1 h-72  justify-self-center self-center mb-8">
@@ -33,10 +36,10 @@ const AuctionItemTile: React.FC<AuctionItemProps> = ({
       <div className="mb-4 flex justify-between flex-row jus text-sm">
         <div
           className={`${
-            currentUser?.email == bidder ? "bg-green-500" : "bg-[#0b469c]"
+            sharedSport == bidder ? "bg-green-500" : "bg-[#0b469c]"
           } rounded-full text-white px-3 `}
         >
-          {currentUser?.email == bidder ? "Winnig Item" : "Watching Item"}
+          {sharedSport == bidder ? "Winning Item" : "Watching Item"}
         </div>
         <div
           className={`${
