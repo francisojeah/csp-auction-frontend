@@ -11,13 +11,13 @@ import { AuctionItemProps } from "@/store/interfaces/auctionItem.interface";
 import { getArtById, getArtWorks } from "./api/sheets";
 
 interface AItemProps {
-  itemm: AuctionItemProps;
+  item: AuctionItemProps;
+  items: AuctionItemProps[];
 }
 
-const AuctionItem: NextPage<AItemProps> = ({ itemm }: AItemProps) => {
+const AuctionItem = ({ item, items }: AItemProps) => {
   const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
   const router = useRouter();
-  let elwey = parseInt(itemm.id?.toString() || "", 10);
 
   return (
     <>
@@ -25,7 +25,7 @@ const AuctionItem: NextPage<AItemProps> = ({ itemm }: AItemProps) => {
       <div className="flex flex-col justify-between lg:flex-row gap-16 lg:items-center p-10">
         <div className="flex flex-col gap-6 lg:w-2/4">
           <Image
-            src={itemm.photo}
+            src={item.photo}
             alt="login screen image"
             width="0"
             height="0"
@@ -38,26 +38,26 @@ const AuctionItem: NextPage<AItemProps> = ({ itemm }: AItemProps) => {
             <div className="mb-4 flex justify-between flex-row jus text-sm">
               <div
                 className={`${
-                  currentUser?.email == itemm.bidder
+                  currentUser?.email == item.bidder
                     ? "bg-green-500"
                     : "bg-[#0b469c]"
                 } rounded-full text-white px-3 `}
               >
-                {currentUser?.email == itemm.bidder
-                  ? "Winnig Item"
+                {currentUser?.email == item.bidder
+                  ? "Winning Item"
                   : "Watching Item"}
               </div>
               <div
                 className={`${
-                  itemm.isClosed === "0" ? "bg-green-500" : "bg-red-500"
+                  item.isClosed === "0" ? "bg-green-500" : "bg-red-500"
                 } rounded-full text-white px-3 `}
               >
-                {itemm.isClosed === "0" ? "Open" : "closed"}
+                {item.isClosed === "0" ? "Open" : "closed"}
               </div>
             </div>
-            <h1 className="text-3xl font-bold">{itemm.title}</h1>
+            <h1 className="text-3xl font-bold">{item.title}</h1>
           </div>
-          <p className="text-gray-700">{itemm.description}</p>
+          <p className="text-gray-700">{item.description}</p>
           <div className=" flex justify-between font-semibold">
             <div className=" flex flex-col">
               <p className="text-green-500 flex gap-1">
@@ -66,7 +66,7 @@ const AuctionItem: NextPage<AItemProps> = ({ itemm }: AItemProps) => {
                   <FaGavel />
                 </span>
               </p>
-              <p>N {itemm.currentBid}</p>
+              <p>N {item.currentBid}</p>
             </div>
             <div className=" flex flex-col">
               <p className="text-[#0b469c] flex gap-1">
@@ -75,7 +75,7 @@ const AuctionItem: NextPage<AItemProps> = ({ itemm }: AItemProps) => {
                   <FaGavel />
                 </span>
               </p>
-              <p>N {itemm.minimumBid}</p>
+              <p>N {item.minimumBid}</p>
             </div>
           </div>
           <div className="flex lg:flex-row items-center gap-8">
@@ -101,9 +101,7 @@ const AuctionItem: NextPage<AItemProps> = ({ itemm }: AItemProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<AItemProps> = async (
-  context: any
-) => {
+export async function getServerSideProps(context: { res: any; id: any }) {
   context.res.setHeader(
     "Cache-Control",
     "public, s-maxage=300, stale-while-revalidate=360"
@@ -111,13 +109,21 @@ export const getServerSideProps: GetServerSideProps<AItemProps> = async (
   const { query } = context;
   const { id } = query;
 
-  const itemm: any = getArtById(id);
+  // Fetch the list of auction items using getArtWorks
+  const items: any = await getArtWorks();
+
+  // Find the item with the matching id
+  const item = items.find((item: any) => item[0] === id);
 
   return {
     props: {
-      itemm,
+      item: {
+        title: item[1], // Assuming title is stored in the second column (index 1) of the item data
+        // Include other properties of the item
+      },
+      items: items.slice(1), // Exclude the first item (assuming it contains header or irrelevant data)
     },
   };
-};
+}
 
 export default AuctionItem;

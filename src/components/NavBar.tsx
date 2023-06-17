@@ -28,7 +28,7 @@ const NavBar = () => {
           <Link href="/">
             <div className="font-bold text-xl sm:text-3xl">CSP x YSMA</div>
           </Link>
-          {currentUser ? (
+          {!currentUser ? (
             <div className="flex items-center gap-6">
               <Link className="hover:text-[#0b469c] transition" href="/login">
                 Log in
