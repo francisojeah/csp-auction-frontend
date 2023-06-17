@@ -6,7 +6,6 @@ import { FaGavel } from "react-icons/fa";
 import { GetServerSideProps, NextPage } from "next";
 import NavBar from "@/components/NavBar";
 
-
 import { getArtById, getArtWorks } from "./api/sheets";
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
@@ -22,14 +21,6 @@ const AuctionItem = ({ items }: Props) => {
   const sharedSport = useSelector((state: RootState) => state.string1);
   const router = useRouter();
   const [bidd, setBidd] = useState("");
-
-  const oncli = () => {
-    if (bidd == "" || bidd <= items.currentBid) {
-      alert("You can't bid less than the current price");
-    } else {
-      <Login currentBid={bidd} id={items.id} />;
-    }
-  };
 
   return (
     <>
@@ -98,7 +89,16 @@ const AuctionItem = ({ items }: Props) => {
               />
             </div>
             <div className="w-full flex flex-col my-4">
-              <button className="w-full text-white bg-[#0b469c] font-semibold my-2 py-3 rounded-xl text-center flex items-center justify-center cursor-pointer h-full">
+              <button
+                className="w-full text-white bg-[#0b469c] font-semibold my-2 py-3 rounded-xl text-center flex items-center justify-center cursor-pointer h-full"
+                onClick={() => {
+                  if (bidd == "" || bidd <= items.currentBid) {
+                    alert("You can't bid less than the current price");
+                  } else {
+                    <Login currentBid={bidd} id={items.id} />;
+                  }
+                }}
+              >
                 Place Bid
               </button>
             </div>
