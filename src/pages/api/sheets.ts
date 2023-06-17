@@ -118,7 +118,7 @@ export async function getArtById(id: string) {
 
         const rows = response.data.values;
         if (rows?.length) {
-            const artwork:any = rows.find((row) => row[0] == id);
+            const artwork:any = rows.find((row) => row[0] === id);
             return ({
                 id: artwork[0],
                 title: artwork[1],

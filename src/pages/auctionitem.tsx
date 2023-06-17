@@ -13,7 +13,11 @@ import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
 import { AuctionItemProps } from "@/store/interfaces/auctionItem.interface";
 
-const AuctionItem = (items: AuctionItemProps) => {
+type Props = {
+  items: any
+}
+
+const AuctionItem = ({items}:Props) => {
   // const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
   const sharedSport = useSelector((state: RootState) => state.string1);
   const router = useRouter();
