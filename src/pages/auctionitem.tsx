@@ -5,13 +5,12 @@ import React, { useContext, useState } from "react";
 import { FaGavel } from "react-icons/fa";
 import { GetServerSideProps, NextPage } from "next";
 import NavBar from "@/components/NavBar";
-import { AuthContext } from "@/AuthContext";
-import { User } from "firebase/auth";
+
 
 import { getArtById, getArtWorks } from "./api/sheets";
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
-import { AuctionItemProps } from "@/store/interfaces/auctionItem.interface";
+
 import Login from "./login";
 
 type Props = {

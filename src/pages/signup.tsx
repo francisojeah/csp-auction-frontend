@@ -4,17 +4,7 @@ import { FaGoogle } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, updateSport1 } from "@/store/store";
 import React, { useContext, useState } from "react";
-import {
-  User,
-  createUserWithEmailAndPassword,
-  signInWithPopup,
-} from "firebase/auth";
-import { auth, db, googleProvider } from "../firebase";
-import { collection, addDoc, Timestamp } from "firebase/firestore";
 
-import { Formik, Form } from "formik";
-import ConditionalRoute from "@/routes/ConditionalRoute";
-import { AuthContext } from "@/AuthContext";
 import { useRouter } from "next/router";
 import Link from "next/link";
 

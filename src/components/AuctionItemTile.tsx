@@ -5,8 +5,6 @@ import { AuctionItemProps } from "@/store/interfaces/auctionItem.interface";
 
 import { FaGavel } from "react-icons/fa";
 import Link from "next/link";
-import { AuthContext } from "@/AuthContext";
-import { User } from "firebase/auth";
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
 

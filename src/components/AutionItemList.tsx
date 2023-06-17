@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 
 import { ImSpinner2 } from "react-icons/im";
 import AuctionItemTile from "./AuctionItemTile";
-import { db } from "@/firebase";
 import { getDocs, collection } from "firebase/firestore";
 import {
   listAll,

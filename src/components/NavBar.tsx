@@ -1,9 +1,8 @@
-import { auth } from "@/firebase";
+
 import { User, signOut } from "firebase/auth";
 import Link from "next/link";
 import React, { useContext } from "react";
 import { useRouter } from "next/router";
-import { AuthContext } from "@/AuthContext";
 import { RootState, updateSport1 } from "@/store/store";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -14,21 +13,10 @@ const NavBar = () => {
     dispatch(updateSport1(""));
   };
 
-  const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
 
   const sharedSport = useSelector((state: RootState) => state.string1);
 
-  const handleLogout = () => {
-    signOut(auth)
-      .then(() => {
-        // Sign-out successful.
-        router.push("/");
-        console.log("Signed out successfully");
-      })
-      .catch((error) => {
-        // An error happened.
-      });
-  };
+
   return (
     <>
       <nav className="w-screen z-10 top-0 fixed p-6 mb-12 border-b lg:shadow-1 bg-transparent backdrop-blur">

@@ -1,18 +1,7 @@
 import Image from "next/image";
 import React, { useContext, useState } from "react";
 import Imagess from "../constants/imagess";
-import { FaGoogle } from "react-icons/fa";
 
-import { Formik, Form } from "formik";
-import ConditionalRoute from "@/routes/ConditionalRoute";
-
-import { auth, googleProvider } from "@/firebase";
-import {
-  User,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-} from "firebase/auth";
-import { AuthContext } from "@/AuthContext";
 import { useRouter } from "next/router";
 import { updateArtwork } from "./api/sheets";
 import Link from "next/link";
@@ -30,11 +19,9 @@ export interface AuthProps {
 const Login = ({ currentBid, id }: LoginProps) => {
   const router = useRouter();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   // const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
 
-  const onLogin = () => {};
 
   // const onLogin = (e: any) => {
   //   e.preventDefault();
