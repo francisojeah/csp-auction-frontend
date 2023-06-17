@@ -10,7 +10,7 @@ import { getArtById, getArtWorks } from "./api/sheets";
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
 
-import Login from "../components/login";
+import Login from "@/components/login";
 
 type Props = {
   items: any;
