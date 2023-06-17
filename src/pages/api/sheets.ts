@@ -1,5 +1,6 @@
 import Imagess from '@/constants/imagess';
 import { google } from 'googleapis';
+require('dotenv').config()
 
 const testting = (id: string) => {
 
