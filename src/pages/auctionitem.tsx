@@ -9,8 +9,7 @@ import NavBar from "@/components/NavBar";
 import { getArtById, getArtWorks } from "./api/sheets";
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
-
-import Login from "@/components/Login";
+import Link from "next/link";
 
 type Props = {
   items: any;
@@ -95,7 +94,9 @@ const AuctionItem = ({ items }: Props) => {
                   if (bidd == "" || bidd <= items.currentBid) {
                     alert("You can't bid less than the current price");
                   } else {
-                    <Login currentBid={bidd} id={items.id} />;
+                    <Link
+                      href={`/login?id=${items.id}?currentbid=${bidd}`}
+                    ></Link>;
                   }
                 }}
               >

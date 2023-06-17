@@ -3,21 +3,22 @@ import React, { useContext, useState } from "react";
 import Imagess from "../constants/imagess";
 
 import { useRouter } from "next/router";
-import { updateArtwork } from "../pages/api/sheets";
+import { updateArtwork } from "./api/sheets";
 import Link from "next/link";
 
-export interface LoginProps {
+type Props = {
   currentBid: string;
   id: string;
-}
+};
 
 export interface AuthProps {
   email?: string;
   password?: string;
 }
 
-const Login = ({ currentBid, id }: LoginProps) => {
+const Login = ({ currentBid, id }: Props) => {
   const router = useRouter();
+
   const [email, setEmail] = useState("");
 
   // const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
@@ -203,3 +204,18 @@ export default Login;
 // #0b469c
 
 // #46afe0
+export async function getServerSideProps(context: any) {
+  context.res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=300, stale-while-revalidate=360"
+  );
+  const { query } = context;
+  const { id, currentbid } = query;
+
+  return {
+    props: {
+      id,
+      currentbid,
+    },
+  };
+}
