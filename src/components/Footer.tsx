@@ -1,3 +1,4 @@
+import { MirrowIcon } from "@/Icons/MirrowIcon";
 import React from "react";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
@@ -9,9 +10,9 @@ const Footer = () => {
           <p className="py-3 flex justify-center font-semibold">
             <span className="mr-3">&#169;</span>
             <span className="flex mr-1">Made by Mirrow</span>{" "}
-            {/* <span className="mr-3">
+            <span className="mr-3">
               <MirrowIcon />
-            </span> */}
+            </span>
             <span className="">2023</span>
           </p>
         </a>
