@@ -1,7 +1,6 @@
 import AdminNavBar from "@/components/AdminNavBar";
 import AuctionItemForm from "@/components/AuctionItemForm";
 import Layout from "@/components/Layout";
-import ConditionalRoute from "@/routes/ConditionalRoute";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -23,19 +22,10 @@ export default function EditAuctionItemPage() {
   }, [id]);
 
   return (
-    // <ConditionalRoute
-    //   redirectTo="/homee"
-    //   condition={
-    //     session?.user && session?.user?.email !== "csp@pau.edu.ng"
-    //       ? false
-    //       : true
-    //   }
-    // >
       <>
         <AdminNavBar />
         <h1>Edit Artwork</h1>
         {itemInfo && <AuctionItemForm {...itemInfo} />}
       </>
-    // </ConditionalRoute>
   );
 }

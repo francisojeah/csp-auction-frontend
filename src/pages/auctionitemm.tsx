@@ -7,7 +7,7 @@ import { AuctionItemProps } from "@/store/interfaces/auctionItem.interface";
 import { useSession, signIn, signOut } from "next-auth/react";
 import axios from "axios";
 import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css";
+// import "react-confirm-alert/src/react-confirm-alert.css";
 import { testting } from "@/constants/imagess";
 
 const sendEmail = async (bidder: any, title: any, bid: any) => {

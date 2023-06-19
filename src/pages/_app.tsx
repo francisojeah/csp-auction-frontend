@@ -13,12 +13,10 @@ export default function App({
   return (
     <SessionProvider session={session}>
       <Provider store={store}>
-        <>
-          <NextNProgress color="#0b469c" />
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </>
+        <NextNProgress color="#0b469c" />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Provider>
     </SessionProvider>
   );

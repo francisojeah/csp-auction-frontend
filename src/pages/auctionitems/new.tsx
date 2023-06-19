@@ -4,19 +4,11 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import AuctionItemForm from "@/components/AuctionItemForm";
 import { useSession } from "next-auth/react";
-import ConditionalRoute from "@/routes/ConditionalRoute";
 
 const NewAuctionItem = () => {
     const { data: session } = useSession();
   return (
-    // <ConditionalRoute
-    //   redirectTo="/homee"
-    //   condition={
-    //     session?.user && session?.user?.email !== "csp@pau.edu.ng"
-    //       ? false
-    //       : true
-    //   }
-    // >
+
       <>
         <AdminNavBar />
 
@@ -26,7 +18,6 @@ const NewAuctionItem = () => {
           <AuctionItemForm />
         </div>
       </>
-    // </ConditionalRoute>
   );
 };
 
