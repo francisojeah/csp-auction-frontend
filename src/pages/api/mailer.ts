@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import nodemailer from 'nodemailer';
+const nodemailer = require('nodemailer');
 
 const {
     EMAIL_ADDRESS,
