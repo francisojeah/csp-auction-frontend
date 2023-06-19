@@ -20,17 +20,23 @@ body {
 }
 
 table.basic{
-  @apply w-full;
+  width: 100%;
 }
 
 table.basic thead tr td {
-  @apply bg-[#0b469c];
+  background-color: #0b469c;
 }
 
 table.basic tr td{
-  @apply border p-1 border-[#0a3576];
+  border: 1px solid #0a3576;
+  padding: 1rem;
 }
 
 table.basic a{
-  @apply bg-[#0a3576] text-white text-sm py-1 px-2 rounded-md inline-flex;
+  background-color: #0a3576;
+  color: white;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  display: inline-flex;
 }
