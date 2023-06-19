@@ -1,3 +1,3 @@
-// export interface MenuSlice {
-//     menu: number,
-// }
+export interface MenuSlice {
+    menu: number,
+}

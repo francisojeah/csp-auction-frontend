@@ -25,3 +25,19 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+table.basic{
+  @apply w-full;
+}
+
+table.basic thead tr td {
+  @apply bg-[#0b469c];
+}
+
+table.basic tr td{
+  @apply border p-1 border-[#0a3576];
+}
+
+table.basic a{
+  @apply bg-[#0a3576] text-white text-sm py-1 px-2 rounded-md inline-flex;
+}

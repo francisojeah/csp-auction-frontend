@@ -2,15 +2,13 @@
 
 
 export interface AuctionItemProps {
-    id?: string;
     title?: string;
     author?: string;
-    photo: string;
+    photo?: string;
     description?: string;
-    minimumBid: string;
-    currentBid?: string;
-    bidIncrement?: string;
+    minimumBid?: number;
+    currentBid?: number;
     bidder?: string;
-    isClosed?: string;
+    isOpened?: boolean;
 }
 
