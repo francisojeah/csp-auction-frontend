@@ -19,24 +19,3 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-table.basic{
-  width: 100%;
-}
-
-table.basic thead tr td {
-  background-color: #0b469c;
-}
-
-table.basic tr td{
-  border: 1px solid #0a3576;
-  padding: 1rem;
-}
-
-table.basic a{
-  background-color: #0a3576;
-  color: white;
-  font-size: 0.875rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  display: inline-flex;
-}

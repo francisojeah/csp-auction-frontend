@@ -4,13 +4,10 @@ import CountdownTimer from "@/components/CountdownTimer";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import Sponsors from "@/components/Sponsors";
-import ConditionalRoute from "@/routes/ConditionalRoute";
 import moment from "moment";
-import { useSession } from "next-auth/react";
 import React from "react";
 
-const Homee = ({ items }: any) => {
-  const { data: session } = useSession();
+const Homee = () => {
   return (
 
       <>

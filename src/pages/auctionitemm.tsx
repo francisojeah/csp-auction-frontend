@@ -18,7 +18,7 @@ const sendEmail = async (bidder: any, title: any, bid: any) => {
       text:
         "Your bid for " +
         title +
-        " has been placed! Bid: " +
+        " has been placed! Bid: N" +
         bid +
         " Please check back regularly on the website to see if anyone out bids you. If no one out bids you at the end of the auction, you will be contacted with the payment details. Thank you",
       html: `<h1>Your bid for ' ${title} has been placed!</h1><br/><p>Bid: ${bid}</p><br/><p>Please check back regularly on the website to see if anyone out bids you https://cspxysma.art .</p><br/><p>If no one out bids you at the end of the auction, you will be contacted with the payment details.</p><br/><p>Thank you.</p>`,

@@ -1,12 +1,8 @@
-import { Imagess } from "@/constants/imagess";
 import React, { useContext } from "react";
 import Image from "next/image";
 import { AuctionItemProps } from "@/store/interfaces/auctionItem.interface";
 
 import { FaGavel } from "react-icons/fa";
-import Link from "next/link";
-import { RootState } from "@/store/store";
-import { useSelector } from "react-redux";
 import { useSession } from "next-auth/react";
 
 const AuctionItemTile: React.FC<AuctionItemProps> = ({
