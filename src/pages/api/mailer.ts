@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
-
 const {
     EMAIL_ADDRESS,
     EMAIL_SERVICE,
