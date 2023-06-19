@@ -59,7 +59,7 @@ const submitt2 = () => {
     closeOnEscape: true,
     closeOnClickOutside: true,
     keyCodeForClose: [8, 32],
-    overlayClassName: "overlay-custom-class-name",
+    // overlayClassName: "overlay-custom-class-name",
   });
 };
 
@@ -76,7 +76,7 @@ const submitt3 = () => {
     closeOnEscape: true,
     closeOnClickOutside: true,
     keyCodeForClose: [8, 32],
-    overlayClassName: "overlay-custom-class-name",
+    // overlayClassName: "overlay-custom-class-name",
   });
 };
 
@@ -120,7 +120,7 @@ const AuctionItemm = () => {
       closeOnEscape: true,
       closeOnClickOutside: true,
       keyCodeForClose: [8, 32],
-      overlayClassName: "overlay-custom-class-name",
+      // overlayClassName: "overlay-custom-class-name",
     });
   };
 
