@@ -3,28 +3,28 @@ import React, { useContext } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css";
+// import { confirmAlert } from "react-confirm-alert";
+// import "react-confirm-alert/src/react-confirm-alert.css";
 
 const submitt = () => {
-  confirmAlert({
-    title: "Confirm Log Out",
-    message: "Are you sure you want to log out?",
-    buttons: [
-      {
-        label: "Yes",
-        onClick: () => signOut(),
-      },
-      {
-        label: "No",
-        onClick: () => close(),
-      },
-    ],
-    closeOnEscape: true,
-    closeOnClickOutside: true,
-    keyCodeForClose: [8, 32],
-    // overlayClassName: "overlay-custom-class-name",
-  });
+  // confirmAlert({
+  //   title: "Confirm Log Out",
+  //   message: "Are you sure you want to log out?",
+  //   buttons: [
+  //     {
+  //       label: "Yes",
+  //       onClick: () => signOut(),
+  //     },
+  //     {
+  //       label: "No",
+  //       onClick: () => close(),
+  //     },
+  //   ],
+  //   closeOnEscape: true,
+  //   closeOnClickOutside: true,
+  //   keyCodeForClose: [8, 32],
+  //   // overlayClassName: "overlay-custom-class-name",
+  // });
 };
 
 const NavBar = () => {

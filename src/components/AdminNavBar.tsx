@@ -6,8 +6,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Dispatch, useMemo, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css";
+// import { confirmAlert } from "react-confirm-alert";
+// import "react-confirm-alert/src/react-confirm-alert.css";
 
 function AdminNavBar() {
   const { data: session } = useSession();
@@ -26,24 +26,24 @@ function AdminNavBar() {
   };
 
   const submitt = () => {
-    confirmAlert({
-      title: "Confirm Log Out",
-      message: "Are you sure you want to log out?",
-      buttons: [
-        {
-          label: "Yes",
-          onClick: () => signOuttt(),
-        },
-        {
-          label: "No",
-          onClick: () => close(),
-        },
-      ],
-      closeOnEscape: true,
-      closeOnClickOutside: true,
-      keyCodeForClose: [8, 32],
-      // overlayClassName: "overlay-custom-class-name",
-    });
+    // confirmAlert({
+    //   title: "Confirm Log Out",
+    //   message: "Are you sure you want to log out?",
+    //   buttons: [
+    //     {
+    //       label: "Yes",
+    //       onClick: () => signOuttt(),
+    //     },
+    //     {
+    //       label: "No",
+    //       onClick: () => close(),
+    //     },
+    //   ],
+    //   closeOnEscape: true,
+    //   closeOnClickOutside: true,
+    //   keyCodeForClose: [8, 32],
+    //   // overlayClassName: "overlay-custom-class-name",
+    // });
   };
 
   const menus = useMemo(() => {
