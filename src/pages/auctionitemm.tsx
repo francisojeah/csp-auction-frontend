@@ -11,39 +11,39 @@ import axios from "axios";
 import { testting } from "@/constants/imagess";
 
 const sendEmail = async (bidder: any, title: any, bid: any) => {
-  try {
-    const response = await axios.post("api/mailer", {
-      to: bidder,
-      subject: "Bid for " + title + " Placed",
-      text:
-        "Your bid for " +
-        title +
-        " has been placed! Bid: N" +
-        bid +
-        " Please check back regularly on the website to see if anyone out bids you. If no one out bids you at the end of the auction, you will be contacted with the payment details. Thank you",
-      html: `<h1>Your bid for ' ${title} has been placed!</h1><br/><p>Bid: ${bid}</p><br/><p>Please check back regularly on the website to see if anyone out bids you https://cspxysma.art .</p><br/><p>If no one out bids you at the end of the auction, you will be contacted with the payment details.</p><br/><p>Thank you.</p>`,
-    });
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
+  // try {
+  //   const response = await axios.post("api/mailer", {
+  //     to: bidder,
+  //     subject: "Bid for " + title + " Placed",
+  //     text:
+  //       "Your bid for " +
+  //       title +
+  //       " has been placed! Bid: N" +
+  //       bid +
+  //       " Please check back regularly on the website to see if anyone out bids you. If no one out bids you at the end of the auction, you will be contacted with the payment details. Thank you",
+  //     html: `<h1>Your bid for ' ${title} has been placed!</h1><br/><p>Bid: ${bid}</p><br/><p>Please check back regularly on the website to see if anyone out bids you https://cspxysma.art .</p><br/><p>If no one out bids you at the end of the auction, you will be contacted with the payment details.</p><br/><p>Thank you.</p>`,
+  //   });
+  //   console.log(response);
+  // } catch (error) {
+  //   console.error(error);
+  // }
 };
 
 const sendEmail1 = async (bidder: any, title: any) => {
-  try {
-    const response = await axios.post("api/mailer", {
-      to: bidder,
-      subject: "Someone has placed a higher bid for " + title,
-      text:
-        "Someone has placed a higher bid for " +
-        title +
-        " Please visit the website to place a higher bid. https://cspxysma.art Thank you",
-      html: `<h1>Someone has placed a higher bid for ' ${title} </h1><br/><p>Please visit the website to place a higher bid.</p><br/><p>https://cspxysma.art</p><br/><p>Thank you.</p>`,
-    });
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
+  // try {
+  //   const response = await axios.post("api/mailer", {
+  //     to: bidder,
+  //     subject: "Someone has placed a higher bid for " + title,
+  //     text:
+  //       "Someone has placed a higher bid for " +
+  //       title +
+  //       " Please visit the website to place a higher bid. https://cspxysma.art Thank you",
+  //     html: `<h1>Someone has placed a higher bid for ' ${title} </h1><br/><p>Please visit the website to place a higher bid.</p><br/><p>https://cspxysma.art</p><br/><p>Thank you.</p>`,
+  //   });
+  //   console.log(response);
+  // } catch (error) {
+  //   console.error(error);
+  // }
 };
 
 const submitt2 = () => {
