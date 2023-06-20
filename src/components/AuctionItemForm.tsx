@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
-import Spinner from "@/components/Spinner";
+// import Spinner from "@/components/Spinner";
 import { testting } from "@/constants/imagess";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
@@ -154,7 +154,6 @@ const { data: session }: any = useSession();
           )}
           {isUploading && (
             <div className="h-24 flex items-center">
-              <Spinner />
             </div>
           )}
           <label className="w-24 h-24 cursor-pointer text-center flex flex-col items-center justify-center text-sm gap-1 text-primary rounded-sm bg-white shadow-sm border border-primary">

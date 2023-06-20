@@ -1,6 +1,3 @@
-
-
-
 export interface AuctionItemProps {
     title?: string;
     author?: string;
