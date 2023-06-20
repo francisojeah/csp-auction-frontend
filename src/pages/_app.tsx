@@ -14,12 +14,12 @@ export default function App({
 }: AppProps) {
   return (
     <SessionProvider session={session}>
-      <Provider store={store}>
+      {/* <Provider store={store}> */}
         <NextNProgress color="#0b469c" />
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </Provider>
+      {/* </Provider> */}
     </SessionProvider>
 
     /**<Provider store={store}>
