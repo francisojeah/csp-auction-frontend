@@ -6,9 +6,10 @@ import NavBar from "@/components/NavBar";
 import { AuctionItemProps } from "@/store/interfaces/auctionItem.interface";
 import { useSession, signIn, signOut } from "next-auth/react";
 import axios from "axios";
+import { Imagess } from "@/constants/imagess";
 // import { confirmAlert } from "react-confirm-alert";
 // import "react-confirm-alert/src/react-confirm-alert.css";
-import { testting } from "@/constants/imagess";
+// import { testting } from "@/constants/imagess";
 
 const sendEmail = async (bidder: any, title: any, bid: any) => {
   // try {
@@ -165,7 +166,8 @@ const AuctionItemm = () => {
         <div className="flex flex-col justify-between lg:flex-row gap-16 lg:items-center p-10">
           <div className="flex flex-col gap-6 lg:w-2/4">
             <Image
-              src={testting(items.photo) || ""}
+              // src={testting(items.photo) || ""}
+              src={Imagess.Csp1 || ""}
               alt="item image"
               width="0"
               height="0"

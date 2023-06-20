@@ -4,7 +4,8 @@ import AuctionItemTile from "./AuctionItemTile";
 import { useSession, signIn, signOut } from "next-auth/react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { testting } from "../constants/imagess";
+import { Imagess } from "@/constants/imagess";
+// import { testting } from "../constants/imagess";
 
 const AutionItemList = () => {
   const { data: session } = useSession();
@@ -32,7 +33,8 @@ const AutionItemList = () => {
                 <AuctionItemTile
                   key={index}
                   title={item.title}
-                  photo={testting(item.photo)}
+                  // photo={testting(item.photo)}
+                  photo={Imagess.Csp1}
                   author={item.author}
                   minimumBid={item.minimumBid}
                   currentBid={item.currentBid}
