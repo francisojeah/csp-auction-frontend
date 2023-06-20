@@ -16,7 +16,7 @@ const Homee = () => {
         <AutionItemList />
         <Sponsors />
         <Footer /> */}
-      {/* <div className="">Bids</div> */}
+      <div className="">Bids</div>
     </div>
   );
 };
