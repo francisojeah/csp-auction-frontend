@@ -9,15 +9,15 @@ import React from "react";
 
 const Homee = () => {
   return (
-
-      <>
-        <NavBar />
+    <div className="font-bold text-red-700 bg-black">
+      {/* <NavBar />
         <Banner />
         <CountdownTimer eventTime={moment("2023-06-17 12:00:00")} />
         <AutionItemList />
         <Sponsors />
-        <Footer />
-      </>
+        <Footer /> */}
+      {/* <div className="">Bids</div> */}
+    </div>
   );
 };
 

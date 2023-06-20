@@ -10,17 +10,14 @@ import { SessionProvider } from "next-auth/react";
 
 export default function App({
   Component,
-  pageProps: { session, ...pageProps },
-}: AppProps) {
+  pageProps }:  AppProps) {
   return (
-    <SessionProvider session={session}>
-      {/* <Provider store={store}> */}
-        <NextNProgress color="#0b469c" />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      {/* </Provider> */}
-    </SessionProvider>
+    <>
+      <NextNProgress color="#0b469c" />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
 
     /**<Provider store={store}>
       <NextNProgress color="#123369" />

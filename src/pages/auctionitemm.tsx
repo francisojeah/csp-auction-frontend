@@ -82,23 +82,23 @@ const submitt3 = () => {
 };
 
 const AuctionItemm = () => {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
-  const router = useRouter();
-  const [bidd, setBidd] = useState("0");
-  const [isUploading, setIsUploading] = useState(false);
-  const [goToAuctionItem, setGoToAuctionItem] = useState(false);
+  // const router = useRouter();
+  // const [bidd, setBidd] = useState("0");
+  // const [isUploading, setIsUploading] = useState(false);
+  // const [goToAuctionItem, setGoToAuctionItem] = useState(false);
 
-  const [items, setItems] = useState<any>();
-  const { id } = router.query;
+  // const [items, setItems] = useState<any>();
+  // const { id } = router.query;
 
-  let _id = id;
+  // let _id = id;
 
-  useEffect(() => {
-    if (!session) {
-      signIn("google");
-    }
-  });
+  // useEffect(() => {
+  //   if (!session) {
+  //     signIn("google");
+  //   }
+  // });
 
   const submitt1 = () => {
     // confirmAlert({
@@ -125,43 +125,44 @@ const AuctionItemm = () => {
     // });
   };
 
-  async function saveBid(e: any) {
-    e.preventDefault();
-    console.log("ergdbv");
-    const oldbidder = items.bidder;
+  // async function saveBid(e: any) {
+  //   e.preventDefault();
+  //   console.log("ergdbv");
+  //   const oldbidder = items.bidder;
 
-    const data: AuctionItemProps = {
-      minimumBid: parseFloat(bidd) + 0.1 * parseFloat(bidd),
-      currentBid: parseFloat(bidd),
-      bidder: session?.user?.email || "",
-    };
+  //   const data: AuctionItemProps = {
+  //     minimumBid: parseFloat(bidd) + 0.1 * parseFloat(bidd),
+  //     currentBid: parseFloat(bidd),
+  //     bidder: session?.user?.email || "",
+  //   };
 
-    if (_id) {
-      //update
-      await axios.put("/api/auctionitems", { ...data, _id });
-    } else {
-    }
-    sendEmail(data.bidder, items.title, data.currentBid);
-    sendEmail1(oldbidder, items.title);
-    setGoToAuctionItem(true);
-  }
+  //   if (_id) {
+  //     //update
+  //     await axios.put("/api/auctionitems", { ...data, _id });
+  //   } else {
+  //   }
+  //   sendEmail(data.bidder, items.title, data.currentBid);
+  //   sendEmail1(oldbidder, items.title);
+  //   setGoToAuctionItem(true);
+  // }
 
-  if (goToAuctionItem) {
-    router.push("/homee");
-  }
+  // if (goToAuctionItem) {
+  //   router.push("/homee");
+  // }
 
-  useEffect(() => {
-    if (!_id) {
-      return;
-    }
-    axios.get("/api/auctionitems?_id=" + _id).then((response) => {
-      setItems(response.data);
-    });
-  }, [_id]);
+  // useEffect(() => {
+  //   if (!_id) {
+  //     return;
+  //   }
+  //   axios.get("/api/auctionitems?_id=" + _id).then((response) => {
+  //     setItems(response.data);
+  //   });
+  // }, [_id]);
 
   return (
     <>
-      <NavBar />
+      <div>Bids</div>
+      {/* <NavBar />
       {items && (
         <div className="flex flex-col justify-between lg:flex-row gap-16 lg:items-center p-10">
           <div className="flex flex-col gap-6 lg:w-2/4">
@@ -251,8 +252,8 @@ const AuctionItemm = () => {
               </div>
             </div>
           </div>
-        </div>
-      )}
+        </div> 
+                )}*/}
     </>
   );
 };

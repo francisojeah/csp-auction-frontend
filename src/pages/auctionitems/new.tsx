@@ -6,18 +6,18 @@ import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 
 const NewAuctionItem = () => {
-    const { data: session } = useSession();
+    // const { data: session } = useSession();
   return (
+    <>
+      {/* <AdminNavBar /> */}
 
-      <>
-        {/* <AdminNavBar /> */}
+      {/* <div className="p-10">
+          <h1 className="text-[#0b469c] mb-2 text-xl">New Artwork</h1> */}
 
-        <div className="p-10">
-          <h1 className="text-[#0b469c] mb-2 text-xl">New Artwork</h1>
-
-          {/* <AuctionItemForm /> */}
-        </div>
-      </>
+      {/* <AuctionItemForm /> */}
+      {/* </div> */}
+      <div>Bids</div>
+    </>
   );
 };
 

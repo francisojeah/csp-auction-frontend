@@ -5,23 +5,23 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
 const Bids = () => {
-  const { data: session }: any = useSession();
-  const [items, SetItems] = useState([]);
-  const router = useRouter();
-  useEffect(() => {
-    if (session !== null) {
-      if (!session) {
-        router.push("/");
-      } else if (session?.user?.role !== "admin") {
-        router.push("/");
-      }
-    }
-  }, [session, router]);
-  useEffect(() => {
-    axios.get("/api/auctionitems").then((response) => {
-      SetItems(response.data);
-    });
-  }, []);
+  // const { data: session }: any = useSession();
+  // const [items, SetItems] = useState([]);
+  // const router = useRouter();
+  // useEffect(() => {
+  //   if (session !== null) {
+  //     if (!session) {
+  //       router.push("/");
+  //     } else if (session?.user?.role !== "admin") {
+  //       router.push("/");
+  //     }
+  //   }
+  // }, [session, router]);
+  // useEffect(() => {
+  //   axios.get("/api/auctionitems").then((response) => {
+  //     SetItems(response.data);
+  //   });
+  // }, []);
   return (
       <>
         {/* <AdminNavBar /> */}
