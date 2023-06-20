@@ -10,9 +10,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "background-image": "url('/assets/images/backgroundimage.jpg')",
-      },
+      
     },
     screens: {
       ...defaultTheme.screens,
