@@ -28,7 +28,7 @@ const AuctionItems = () => {
     <>
       {/* <AdminNavBar /> */}
 
-      <Link
+      {/* <Link
         className="bg-[#0b469c] text-white  rounded-md py-1 px-4 "
         href={"auctionitems/new"}
       >
@@ -69,7 +69,7 @@ const AuctionItems = () => {
               </tr>
             ))}
         </tbody>
-      </table>
+      </table> */}
     </>
   );
 };

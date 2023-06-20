@@ -26,7 +26,7 @@ const Bids = () => {
       <>
         {/* <AdminNavBar /> */}
 
-        <table >
+        {/* <table >
           <thead>
             <tr>
               <td>Bids</td>
@@ -42,7 +42,7 @@ const Bids = () => {
                 </tr>
               ))}
           </tbody>
-        </table>
+        </table> */}
       </>
   );
 };
