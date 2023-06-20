@@ -1,5 +1,5 @@
-import AdminNavBar from "@/components/AdminNavBar";
-import AuctionItemForm from "@/components/AuctionItemForm";
+// import AdminNavBar from "@/components/AdminNavBar";
+// import AuctionItemForm from "@/components/AuctionItemForm";
 import Layout from "@/components/Layout";
 import axios from "axios";
 import { useSession } from "next-auth/react";
@@ -23,9 +23,9 @@ export default function EditAuctionItemPage() {
 
   return (
       <>
-        <AdminNavBar />
+        {/* <AdminNavBar /> */}
         <h1>Edit Artwork</h1>
-        {itemInfo && <AuctionItemForm {...itemInfo} />}
+        {/* {itemInfo && <AuctionItemForm {...itemInfo} />} */}
       </>
   );
 }

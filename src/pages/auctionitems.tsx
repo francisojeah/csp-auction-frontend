@@ -1,4 +1,4 @@
-import AdminNavBar from "@/components/AdminNavBar";
+// import AdminNavBar from "@/components/AdminNavBar";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -26,7 +26,7 @@ const AuctionItems = () => {
   }, []);
   return (
     <>
-      <AdminNavBar />
+      {/* <AdminNavBar /> */}
 
       <Link
         className="bg-[#0b469c] text-white  rounded-md py-1 px-4 "

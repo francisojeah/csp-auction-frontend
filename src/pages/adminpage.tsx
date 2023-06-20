@@ -1,4 +1,4 @@
-import AdminNavBar from "@/components/AdminNavBar";
+// import AdminNavBar from "@/components/AdminNavBar";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -15,7 +15,9 @@ function Adminpage() {
       }
     }
   }, [session, router]);
-  return <AdminNavBar />;
+  return (<></>
+    // <AdminNavBar />
+  );
 }
 
 export default Adminpage;

@@ -1,4 +1,4 @@
-import AdminNavBar from "@/components/AdminNavBar";
+// import AdminNavBar from "@/components/AdminNavBar";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -24,7 +24,7 @@ const Bids = () => {
   }, []);
   return (
       <>
-        <AdminNavBar />
+        {/* <AdminNavBar /> */}
 
         <table >
           <thead>
