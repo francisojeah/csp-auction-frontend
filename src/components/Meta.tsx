@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import {Imagess} from '@/constants/imagess';
+import Imagess from '@/constants/imagess';
 
 type Props = {
   title: string;

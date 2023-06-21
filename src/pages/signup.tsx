@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {Imagess} from "../constants/imagess";
+import Imagess from "../constants/imagess";
 import { FaGoogle } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, updateSport1 } from "@/store/store";

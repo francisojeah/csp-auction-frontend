@@ -1,4 +1,4 @@
-import { Imagess } from "@/constants/imagess";
+import Imagess from "@/constants/imagess";
 import React, { useContext } from "react";
 import Image from "next/image";
 import { AuctionItemProps } from "@/store/interfaces/auctionItem.interface";
@@ -7,49 +7,44 @@ import { FaGavel } from "react-icons/fa";
 import Link from "next/link";
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
-import { useSession } from "next-auth/react";
 
 const AuctionItemTile: React.FC<AuctionItemProps> = ({
   title,
   author,
   currentBid,
-  isOpened,
+  isClosed,
   photo,
   minimumBid,
   bidder,
 }) => {
-  const { data: session } = useSession();
+  // const { currentUser }: { currentUser: User | null } = useContext(AuthContext);
+  const sharedSport = useSelector((state: RootState) => state.string1);
   return (
     <div className="bg-white shadow-1 p-5 rounded-lg  w-full max-w-[352px] mx-auto cursor-pointer hover:shadow-2xl transition ">
       <div className="flex-none rounded-lg border overflow-hidden shadow-lg bg-gray-200 order-1 h-72  justify-self-center self-center mb-8">
         <Image
-          src={photo || ""}
+          src={photo}
           alt="Auction Item image"
           width="0"
           height="0"
           sizes="100vw"
           className="w-full h-full object-cover"
-          priority={true}
         />
       </div>
       <div className="mb-4 flex justify-between flex-row jus text-sm">
         <div
           className={`${
-            session && session?.user?.email == bidder
-              ? "bg-green-500"
-              : "bg-[#0b469c]"
+            sharedSport == bidder ? "bg-green-500" : "bg-[#0b469c]"
           } rounded-full text-white px-3 `}
         >
-          {session && session?.user?.email === bidder
-            ? "Winning Item"
-            : "Watching Item"}
+          {sharedSport == bidder ? "Winning Item" : "Watching Item"}
         </div>
         <div
           className={`${
-            isOpened ? "bg-green-500" : "bg-red-500"
+            isClosed === '0' ? "bg-green-500" : "bg-red-500"
           } rounded-full text-white px-3 `}
         >
-          {isOpened ? "Open" : "Closed"}
+          {isClosed === '0' ? "Open" : "Closed"}
         </div>
       </div>
       <div className="text-lg font-semibold max-w-[260px] mb-2">{title}</div>

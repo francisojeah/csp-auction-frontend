@@ -1,10 +1,10 @@
-import React from "react";
-import Meta from "./Meta";
-import { Open_Sans } from "next/font/google";
+import React from 'react';
+import Meta from './Meta';
+import { Open_Sans } from 'next/font/google';
 
 const openSans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-open-sans",
+  subsets: ['latin'],
+  variable: '--font-open-sans',
 });
 
 const Layout = ({ children }: any) => {

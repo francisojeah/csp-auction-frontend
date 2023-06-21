@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import {Imagess} from "@/constants/imagess";
+import Imagess from "@/constants/imagess";
 import Link from "next/link";
 
 const Banner = () => {

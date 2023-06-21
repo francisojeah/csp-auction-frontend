@@ -34,7 +34,7 @@ const Csp25 = "/assets/images/25.jpg";
 const Csp26 = "/assets/images/26.jpg";
 const Csp27 = "/assets/images/27.jpg";
 const Csp28 = "/assets/images/28.jpg";
-export const Imagess = {
+const Imagess = {
     backgroundImage,
     blueCool,
     PauLogo,
@@ -75,66 +75,4 @@ export const Imagess = {
 
 }
 
-
-export const testting = (id: string) => {
-
-    let pic = "";
-    if (id == "1") {
-        pic = Imagess.Csp1;
-    } else if (id == "2") {
-        pic = Imagess.Csp2;
-    } else if (id == "3") {
-        pic = Imagess.Csp3;
-    } else if (id == "4") {
-        pic = Imagess.Csp4;
-    } else if (id == "5") {
-        pic = Imagess.Csp5;
-    } else if (id == "6") {
-        pic = Imagess.Csp6;
-    } else if (id == "7") {
-        pic = Imagess.Csp7;
-    } else if (id == "8") {
-        pic = Imagess.Csp8;
-    } else if (id == "9") {
-        pic = Imagess.Csp9;
-    } else if (id == "10") {
-        pic = Imagess.Csp10;
-    } else if (id == "11") {
-        pic = Imagess.Csp11;
-    } else if (id == "12") {
-        pic = Imagess.Csp12;
-    } else if (id == "13") {
-        pic = Imagess.Csp13;
-    } else if (id == "14") {
-        pic = Imagess.Csp14;
-    } else if (id == "15") {
-        pic = Imagess.Csp15;
-    } else if (id == "16") {
-        pic = Imagess.Csp16;
-    } else if (id == "17") {
-        pic = Imagess.Csp17;
-    } else if (id == "18") {
-        pic = Imagess.Csp18;
-    } else if (id == "19") {
-        pic = Imagess.Csp19;
-    } else if (id == "20") {
-        pic = Imagess.Csp20;
-    } else if (id == "21") {
-        pic = Imagess.Csp21;
-    } else if (id == "22") {
-        pic = Imagess.Csp22;
-    } else if (id == "23") {
-        pic = Imagess.Csp23;
-    } else if (id == "24") {
-        pic = Imagess.Csp24;
-    } else if (id == "25") {
-        pic = Imagess.Csp25;
-    } else if (id == "26") {
-        pic = Imagess.Csp26;
-    } else if (id == "27") {
-        pic = Imagess.Csp27;
-    } else if (id == "28") {
-        pic = Imagess.Csp28;
-    }
-    return pic
-}
+export default Imagess;
