@@ -4,20 +4,23 @@ import CountdownTimer from "@/components/CountdownTimer";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import Sponsors from "@/components/Sponsors";
+import ConditionalRoute from "@/routes/ConditionalRoute";
 import moment from "moment";
+import { useSession } from "next-auth/react";
 import React from "react";
 
-const Homee = () => {
+const Homee = ({ items }: any) => {
+  const { data: session } = useSession();
   return (
-    <div className="font-bold text-red-700 bg-black">
-      {/* <NavBar />
+
+      <>
+        <NavBar />
         <Banner />
         <CountdownTimer eventTime={moment("2023-06-17 12:00:00")} />
         <AutionItemList />
         <Sponsors />
-        <Footer /> */}
-      <div className="">Bids</div>
-    </div>
+        <Footer />
+      </>
   );
 };
 

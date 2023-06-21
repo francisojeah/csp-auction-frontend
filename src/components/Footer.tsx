@@ -1,10 +1,11 @@
+import { MirrowIcon } from "@/Icons/MirrowIcon";
 import React from "react";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <div>
-      {/* <div className="flex flex-col max-w-[1240px] px-4 py-1 mx-auto justify-between sm:flex-row text-center  border-t ">
+      <div className="flex flex-col max-w-[1240px] px-4 py-1 mx-auto justify-between sm:flex-row text-center  border-t ">
         <a href="https://linktr.ee/francisojeah" target="_blank">
           <p className="py-3 flex justify-center font-semibold">
             <span className="mr-3">&#169;</span>
@@ -30,7 +31,7 @@ const Footer = () => {
             <FaTwitter color="#1DA1F2" />
           </a>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

@@ -1,32 +1,42 @@
-// import AdminNavBar from "@/components/AdminNavBar";
+import AdminNavBar from "@/components/AdminNavBar";
+import ConditionalRoute from "@/routes/ConditionalRoute";
 import axios from "axios";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
 const Bids = () => {
-  // const { data: session }: any = useSession();
-  // const [items, SetItems] = useState([]);
-  // const router = useRouter();
-  // useEffect(() => {
-  //   if (session !== null) {
-  //     if (!session) {
-  //       router.push("/");
-  //     } else if (session?.user?.role !== "admin") {
-  //       router.push("/");
-  //     }
-  //   }
-  // }, [session, router]);
-  // useEffect(() => {
-  //   axios.get("/api/auctionitems").then((response) => {
-  //     SetItems(response.data);
-  //   });
-  // }, []);
+  const { data: session }: any = useSession();
+  const [items, SetItems] = useState([]);
+  const router = useRouter();
+  useEffect(() => {
+    if (session !== null) {
+      if (!session) {
+        router.push("/");
+      } else if (session?.user?.role !== "admin") {
+        router.push("/");
+      }
+    }
+  }, [session, router]);
+  useEffect(() => {
+    axios.get("/api/auctionitems").then((response) => {
+      SetItems(response.data);
+    });
+  }, []);
   return (
+    <ConditionalRoute
+      redirectTo="/homee"
+      condition={
+        session?.user && session?.user?.email !== "csp@pau.edu.ng"
+          ? false
+          : true
+      }
+    >
       <>
-        {/* <AdminNavBar /> */}
+        <AdminNavBar />
 
-        {/* <table >
+        <table className="basic mt-2">
           <thead>
             <tr>
               <td>Bids</td>
@@ -42,8 +52,9 @@ const Bids = () => {
                 </tr>
               ))}
           </tbody>
-        </table> */}
+        </table>
       </>
+    </ConditionalRoute>
   );
 };
 
