@@ -45,4 +45,18 @@ export default async function handler(
 
     }
 
+
+
+    // const getEmailTemplate1 = (recepientEmail: any, item: any) => {
+    //     return {
+    //         from: EMAIL_ADDRESS,
+    //         to: recepientEmail,
+    //         subject: 'Someone has placed a higher bid for ' + item.title,
+    //         text: 'Someone has placed a higher bid for ' + item.title + ' Please visit the website to place a higher bid. https://cspxysma.art Thank you',
+    //         html: `<h1>Someone has placed a higher bid for ' ${item.title} </h1><br/><p>Please visit the website to place a higher bid.</p><br/><p>https://cspxysma.art</p><br/><p>Thank you.</p>`
+    //     }
+    // }
+
+
+
 }

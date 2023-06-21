@@ -1,4 +1,4 @@
-import Imagess from '@/constants/imagess';
+import {Imagess} from '@/constants/imagess';
 import React from 'react'
 import Image from 'next/image';
 
@@ -8,7 +8,7 @@ const Sponsors = () => {
       <div>
         <Image
           src={Imagess.CspLogo}
-          alt="login screen image"
+          alt="csp image"
           width="0"
           height="0"
           sizes="100vw"
@@ -18,7 +18,7 @@ const Sponsors = () => {
       <div>
         <Image
           src={Imagess.YsmaLogo}
-          alt="login screen image"
+          alt="ysma image"
           width="0"
           height="0"
           sizes="100vw"
@@ -28,7 +28,7 @@ const Sponsors = () => {
       <div>
         <Image
           src={Imagess.PauLogo}
-          alt="login screen image"
+          alt="psu image"
           width="0"
           height="0"
           sizes="100vw"

@@ -15,7 +15,7 @@ export default async function handler(
     const { method } = req;
 
     await mongooseConnect();
-
+    
     const session = await getServerSession(req, res, authOptions);
     console.log(session);
 

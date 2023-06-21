@@ -1,9 +1,8 @@
 import Image from "next/image";
 import React, { useContext, useState } from "react";
-import Imagess from "../constants/imagess";
+import { Imagess } from "../constants/imagess";
 
 import { useRouter } from "next/router";
-import { updateArtwork } from "./api/sheets";
 import Link from "next/link";
 
 type Props = {

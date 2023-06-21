@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import moment, { Moment } from 'moment';
-
+import React, { useState, useEffect } from "react";
+import moment, { Moment } from "moment";
 
 const CountdownTimer: React.FC<{ eventTime: Moment }> = ({ eventTime }) => {
-  const [countdown, setCountdown] = useState('');
+  const [countdown, setCountdown] = useState("");
   const [isEventOngoing, setIsEventOngoing] = useState(false);
   const [isEventEnded, setIsEventEnded] = useState(false);
 
@@ -17,28 +16,29 @@ const CountdownTimer: React.FC<{ eventTime: Moment }> = ({ eventTime }) => {
         const remainingTime = eventTime.diff(now);
         const duration = moment.duration(remainingTime);
         const days = Math.floor(duration.asDays());
-        const hours = duration.hours().toString().padStart(2, '0');
-        const minutes = duration.minutes().toString().padStart(2, '0');
-        const seconds = duration.seconds().toString().padStart(2, '0');
+        const hours = duration.hours().toString().padStart(2, "0");
+        const minutes = duration.minutes().toString().padStart(2, "0");
+        const seconds = duration.seconds().toString().padStart(2, "0");
 
         setCountdown(
-          `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`,
+          `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`
         );
         setIsEventOngoing(false);
       } else {
-        const eventEndTime = moment(eventTime)
-          .add(2, 'hours')
-          .add(30, 'minutes');
+        const eventEndTime = moment(eventTime).add(7, "days");
         const eventDuration = moment.duration(eventEndTime.diff(now));
-        const hours = eventDuration.hours().toString().padStart(2, '0');
-        const minutes = eventDuration.minutes().toString().padStart(2, '0');
-        const seconds = eventDuration.seconds().toString().padStart(2, '0');
+        const days = Math.floor(eventDuration.asDays());
+        const hours = eventDuration.hours().toString().padStart(2, "0");
+        const minutes = eventDuration.minutes().toString().padStart(2, "0");
+        const seconds = eventDuration.seconds().toString().padStart(2, "0");
 
         if (eventDuration.asMilliseconds() <= 0) {
-          setCountdown('00 hours 00 minutes 00 seconds');
+          setCountdown("00 days 00 hours 00 minutes 00 seconds");
           setIsEventEnded(true);
         } else {
-          setCountdown(`${hours} hours ${minutes} minutes ${seconds} seconds`);
+          setCountdown(
+            `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`
+          );
         }
         setIsEventOngoing(true);
       }
@@ -50,7 +50,7 @@ const CountdownTimer: React.FC<{ eventTime: Moment }> = ({ eventTime }) => {
 
     return () => {
       cancelAnimationFrame(animateFrameId);
-      setCountdown('');
+      setCountdown("");
       setIsEventOngoing(false);
     };
   }, [eventTime]);
@@ -90,7 +90,7 @@ const CountdownTimer: React.FC<{ eventTime: Moment }> = ({ eventTime }) => {
           ) : (
             <>
               <p className="lg:text-6xl mb-8 sm:text-4xl text-xl font-semibold">
-                {' '}
+                {" "}
                 {countdown}
               </p>
             </>

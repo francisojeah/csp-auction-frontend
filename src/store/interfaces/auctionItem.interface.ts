@@ -1,3 +1,6 @@
+
+
+
 export interface AuctionItemProps {
     title?: string;
     author?: string;
@@ -8,3 +11,4 @@ export interface AuctionItemProps {
     bidder?: string;
     isOpened?: boolean;
 }
+

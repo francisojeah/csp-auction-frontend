@@ -6,9 +6,9 @@ import NavBar from "@/components/NavBar";
 import { AuctionItemProps } from "@/store/interfaces/auctionItem.interface";
 import { useSession, signIn, signOut } from "next-auth/react";
 import axios from "axios";
-// import { confirmAlert } from "react-confirm-alert";
-// import "react-confirm-alert/src/react-confirm-alert.css";
-// import { testting } from "@/constants/imagess";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
+import { testting } from "@/constants/imagess";
 
 const sendEmail = async (bidder: any, title: any, bid: any) => {
   try {
@@ -18,7 +18,7 @@ const sendEmail = async (bidder: any, title: any, bid: any) => {
       text:
         "Your bid for " +
         title +
-        " has been placed! Bid: N" +
+        " has been placed! Bid: " +
         bid +
         " Please check back regularly on the website to see if anyone out bids you. If no one out bids you at the end of the auction, you will be contacted with the payment details. Thank you",
       html: `<h1>Your bid for ' ${title} has been placed!</h1><br/><p>Bid: ${bid}</p><br/><p>Please check back regularly on the website to see if anyone out bids you https://cspxysma.art .</p><br/><p>If no one out bids you at the end of the auction, you will be contacted with the payment details.</p><br/><p>Thank you.</p>`,
@@ -47,37 +47,37 @@ const sendEmail1 = async (bidder: any, title: any) => {
 };
 
 const submitt2 = () => {
-  // confirmAlert({
-  //   title: "Confirm bid price",
-  //   message: "Your Bid is less than the minimum bid, please enter a higher bid",
-  //   buttons: [
-  //     {
-  //       label: "Ok",
-  //       onClick: () => close(),
-  //     },
-  //   ],
-  //   closeOnEscape: true,
-  //   closeOnClickOutside: true,
-  //   keyCodeForClose: [8, 32],
-  //   // overlayClassName: "overlay-custom-class-name",
-  // });
+  confirmAlert({
+    title: "Confirm bid price",
+    message: "Your Bid is less than the minimum bid, please enter a higher bid",
+    buttons: [
+      {
+        label: "Ok",
+        onClick: () => close(),
+      },
+    ],
+    closeOnEscape: true,
+    closeOnClickOutside: true,
+    keyCodeForClose: [8, 32],
+    overlayClassName: "overlay-custom-class-name",
+  });
 };
 
 const submitt3 = () => {
-  // confirmAlert({
-  //   title: "Bid is Over",
-  //   message: "The Item has already been sold to the highest bidder",
-  //   buttons: [
-  //     {
-  //       label: "Ok",
-  //       onClick: () => close(),
-  //     },
-  //   ],
-  //   closeOnEscape: true,
-  //   closeOnClickOutside: true,
-  //   keyCodeForClose: [8, 32],
-  //   // overlayClassName: "overlay-custom-class-name",
-  // });
+  confirmAlert({
+    title: "Bid is Over",
+    message: "The Item has already been sold to the highest bidder",
+    buttons: [
+      {
+        label: "Ok",
+        onClick: () => close(),
+      },
+    ],
+    closeOnEscape: true,
+    closeOnClickOutside: true,
+    keyCodeForClose: [8, 32],
+    overlayClassName: "overlay-custom-class-name",
+  });
 };
 
 const AuctionItemm = () => {
@@ -100,28 +100,28 @@ const AuctionItemm = () => {
   });
 
   const submitt1 = () => {
-    // confirmAlert({
-    //   title: "Confirm Bid Place",
-    //   message:
-    //     "Are you sure you want to place this bid. Make sure of your amount. Once you do, you would be contacted to pay once the auction is over!",
-    //   buttons: [
-    //     {
-    //       label: "Yes",
-    //       onClick: () => {
-    //         const event = { preventDefault: () => {} };
-    //         saveBid(event);
-    //       },
-    //     },
-    //     {
-    //       label: "No",
-    //       onClick: () => close(),
-    //     },
-    //   ],
-    //   closeOnEscape: true,
-    //   closeOnClickOutside: true,
-    //   keyCodeForClose: [8, 32],
-    //   // overlayClassName: "overlay-custom-class-name",
-    // });
+    confirmAlert({
+      title: "Confirm Bid Place",
+      message:
+        "Are you sure you want to place this bid. Make sure of your amount. Once you do, you would be contacted to pay once the auction is over!",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => {
+            const event = { preventDefault: () => {} };
+            saveBid(event);
+          },
+        },
+        {
+          label: "No",
+          onClick: () => close(),
+        },
+      ],
+      closeOnEscape: true,
+      closeOnClickOutside: true,
+      keyCodeForClose: [8, 32],
+      overlayClassName: "overlay-custom-class-name",
+    });
   };
 
   async function saveBid(e: any) {
@@ -165,10 +165,7 @@ const AuctionItemm = () => {
         <div className="flex flex-col justify-between lg:flex-row gap-16 lg:items-center p-10">
           <div className="flex flex-col gap-6 lg:w-2/4">
             <Image
-              src={
-                // testting(items.photo)
-                // ||
-                ""}
+              src={testting(items.photo) || ""}
               alt="item image"
               width="0"
               height="0"
