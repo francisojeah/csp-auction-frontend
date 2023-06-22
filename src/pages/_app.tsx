@@ -1,3 +1,4 @@
+import "tailwindcss/tailwind.css";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
@@ -15,7 +16,7 @@ export default function App({
       <Provider store={store}>
         <NextNProgress color="#0b469c" />
         {/* <Layout> */}
-          <Component {...pageProps} />
+        <Component {...pageProps} />
         {/* </Layout> */}
       </Provider>
     </SessionProvider>

@@ -1,9 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    domains: ["lh3.googleusercontent.com"],
+module.exports = {
+  // ...other Next.js configurations
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false, // This is required for the `@fullhuman/postcss-purgecss` package
+      };
+    }
+
+    return config;
   },
 };
-
-module.exports = nextConfig;
