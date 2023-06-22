@@ -95,7 +95,7 @@ const AuctionItemm = () => {
 
   useEffect(() => {
     if (!session) {
-      signIn("google");
+      signIn();
     }
   });
 

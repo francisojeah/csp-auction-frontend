@@ -115,7 +115,7 @@ function AdminNavBar() {
             {!session ? (
               <button
                 className="px-8 py-3 text-lg whitespace-nowrap bg-[#0b469c] hover:bg-[#0a3576] text-white  rounded-lg transition"
-                onClick={() => signIn("google")}
+                onClick={() => signIn()}
               >
                 Login
               </button>
@@ -171,7 +171,7 @@ function AdminNavBar() {
             {!session ? (
               <button
                 className="bg-[#0b469c] px-8 py-3 text-lg whitespace-nowrap hover:bg-[#0a3576] text-white  rounded-lg transition"
-                onClick={() => signIn("google")}
+                onClick={() => signIn()}
               >
                 Sign In
               </button>

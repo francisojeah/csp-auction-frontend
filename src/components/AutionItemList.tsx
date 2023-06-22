@@ -26,7 +26,7 @@ const AutionItemList = () => {
             items.map((item: any, index: any) => (
               <Link
                 href={session ? "/auctionitemm?id=" + item._id : "/"}
-                onClick={() => !session && signIn("google")}
+                onClick={() => !session && signIn()}
                 key={index}
               >
                 <AuctionItemTile
