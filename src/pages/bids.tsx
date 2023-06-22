@@ -1,5 +1,4 @@
 import AdminNavBar from "@/components/AdminNavBar";
-import ConditionalRoute from "@/routes/ConditionalRoute";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -25,14 +24,6 @@ const Bids = () => {
     });
   }, []);
   return (
-    <ConditionalRoute
-      redirectTo="/homee"
-      condition={
-        session?.user && session?.user?.email !== "csp@pau.edu.ng"
-          ? false
-          : true
-      }
-    >
       <>
         <AdminNavBar />
 
@@ -54,7 +45,6 @@ const Bids = () => {
           </tbody>
         </table>
       </>
-    </ConditionalRoute>
   );
 };
 
