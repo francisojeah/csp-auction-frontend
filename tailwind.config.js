@@ -1,16 +1,13 @@
 /** @type {import('tailwindcss').Config} */
-// const defaultTheme = require("tailwindcss/defaultTheme");
-module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
-  media: false,
-  theme: {
-    extend: {},
-    // screens: {
-    //   ...defaultTheme.screens,
-    // },
+const defaultTheme = require("tailwindcss/defaultTheme");
+export const content = ["./src/**/*.{js,ts,jsx,tsx}"];
+export const theme = {
+  extend: {},
+  screens: {
+    ...defaultTheme.screens,
   },
-  variants: {
-    extend:{}
-  },
-  plugins: [],
 };
+export const variants = {
+  extend: {}
+};
+export const plugins = [];
