@@ -4,6 +4,12 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./constants/**/*.{js,ts,jsx,tsx}",
+    "./Icons/**/*.{js,ts,jsx,tsx}",
+    "./lib/**/*.{js,ts,jsx,tsx}",
+    "./models/**/*.{js,ts,jsx,tsx}",
+    "./store/**/*.{js,ts,jsx,tsx}",
+    "./styles/**/*.{js,ts,jsx,tsx,css}",
   ],
   theme: {
     extend: {
