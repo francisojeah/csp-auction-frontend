@@ -11,7 +11,7 @@
 const Homee = ({ items }: any) => {
   // const { data: session } = useSession();
   return (
-    <div>Hello world</div>
+    <div className="text-blue-500 bg-red-700">Hello world</div>
     // <>
     //   <NavBar />
     //   <Banner />
