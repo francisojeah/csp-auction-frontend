@@ -170,6 +170,7 @@ const AuctionItemm = () => {
               width="0"
               height="0"
               sizes="100vw"
+              quality={100}
               className="w-full h-full object-cover aspect-square rounded-xl"
               priority={true}
             />

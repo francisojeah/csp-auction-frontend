@@ -28,7 +28,7 @@ export default function AuctionItemForm({
   const [photo, setPhoto] = useState(existingphoto || "");
   const [isUploading, setIsUploading] = useState(false);
   const router = useRouter();
-const { data: session }: any = useSession();
+  const { data: session }: any = useSession();
   useEffect(() => {
     if (session !== null) {
       if (!session) {
@@ -147,6 +147,7 @@ const { data: session }: any = useSession();
                 height="0"
                 sizes="100vw"
                 className="w-full h-full object-contain rounded-lg"
+                quality={100}
                 src={testting(photo)}
                 alt=""
               />

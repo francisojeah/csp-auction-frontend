@@ -53,6 +53,7 @@ const NavBar = () => {
                   width="0"
                   height="0"
                   sizes="100vw"
+                  quality={100}
                   className="w-full h-full object-contain rounded-full "
                   src={session?.user?.image || ""}
                   alt="User images"

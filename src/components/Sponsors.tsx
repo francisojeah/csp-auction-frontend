@@ -11,6 +11,7 @@ const Sponsors = () => {
           alt="csp image"
           width="0"
           height="0"
+          quality={100}
           sizes="100vw"
           className="w-full h-full object-contain"
         />
@@ -21,6 +22,7 @@ const Sponsors = () => {
           alt="ysma image"
           width="0"
           height="0"
+          quality={100}
           sizes="100vw"
           className="w-full h-full object-contain"
         />
@@ -32,6 +34,7 @@ const Sponsors = () => {
           width="0"
           height="0"
           sizes="100vw"
+          quality={100}
           className="w-full h-full object-contain"
         />
       </div>
