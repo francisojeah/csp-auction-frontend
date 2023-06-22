@@ -17,7 +17,6 @@ export default async function handler(
     await mongooseConnect();
     
     const session = await getServerSession(req, res, authOptions);
-    console.log(session);
 
     if (method === 'GET') {
         if (req.query?._id) {
