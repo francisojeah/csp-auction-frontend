@@ -366,24 +366,6 @@ const AuctionItemm = () => {
   );
 };
 
-// export async function getServerSideProps(context: any) {
-//   context.res.setHeader(
-//     "Cache-Control",
-//     "public, s-maxage=300, stale-while-revalidate=360"
-//   );
-//   const { query } = context;
-//   const { id } = query;
 
-//   // Fetch the list of auction items using getArtWorks
-//   const items: any = await getArtById(id);
-
-//   // Find the item with the matching id
-
-//   return {
-//     props: {
-//       items, // Exclude the first item (assuming it contains header or irrelevant data)
-//     },
-//   };
-// }
 
 export default AuctionItemm;
