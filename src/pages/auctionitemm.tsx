@@ -326,7 +326,7 @@ const AuctionItemm = () => {
                       onClick={() => {
                         if (
                           isNaN(parseFloat(bidd)) ||
-                          bidd <= items.minimumBid
+                          bidd < items.minimumBid
                         ) {
                           submitt2();
                         } else if (!items.isOpened) {
