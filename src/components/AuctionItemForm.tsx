@@ -16,8 +16,12 @@ export default function AuctionItemForm({
   author: assignedauthor,
   minimumBid: assignedminimumBid,
   bidder: existingbidder,
+  bidderPhone: existingbidderPhone,
+  bidderName: existingbidderName,
 }: any) {
   const bidder = existingbidder || "";
+  const bidderPhone = existingbidderPhone || "";
+  const bidderName = existingbidderName || "";
   const [title, setTitle] = useState(existingTitle || "");
   const [description, setDescription] = useState(existingDescription || "");
   const [author, setAuthor] = useState(assignedauthor || "");
@@ -29,15 +33,15 @@ export default function AuctionItemForm({
   const [isUploading, setIsUploading] = useState(false);
   const router = useRouter();
   const { data: session }: any = useSession();
-//   useEffect(() => {
-//     if (session !== null) {
-//       if (!session) {
-//         router.push("/");
-//       } else if (session?.user?.role !== "admin") {
-//         router.push("/");
-//       }
-//     }
-//   }, [session, router]);
+  //   useEffect(() => {
+  //     if (session !== null) {
+  //       if (!session) {
+  //         router.push("/");
+  //       } else if (session?.user?.role !== "admin") {
+  //         router.push("/");
+  //       }
+  //     }
+  //   }, [session, router]);
 
   async function saveAuctionItem(e: any) {
     e.preventDefault();
@@ -49,6 +53,8 @@ export default function AuctionItemForm({
       minimumBid,
       currentBid,
       bidder,
+      bidderPhone,
+      bidderName,
       isOpened,
     };
     if (_id) {

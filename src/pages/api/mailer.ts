@@ -12,7 +12,7 @@ export default async function handler(
     res: NextApiResponse
 ) {
     if (req.method === 'POST') {
-        const { to, subject, text } = req.body;
+        const { to, subject, text, mail_type } = req.body;
 
 
         const transporter = nodemailer.createTransport({
@@ -30,11 +30,27 @@ export default async function handler(
             text,
         }
 
+        const mailOptions1 = {
+            from: EMAIL_ADDRESS,
+            to: EMAIL_ADDRESS,
+            subject,
+            text,
+        }
+
         try {
 
+            if (mail_type === "1") {
+                const result = await transporter.sendMail(mailOptions);
+                res.status(200).json({ message: 'Email sent successfully' })
+            }
 
-            const result = await transporter.sendMail(mailOptions);
-            res.status(200).json({ message: 'Email sent successfully' })
+            if (mail_type === "2") {
+                const result = await transporter.sendMail(mailOptions1);
+                res.status(200).json({ message: 'Email sent successfully' })
+            }
+
+
+
 
         } catch (error) {
             res.status(500).json({ message: 'Failed to send email' })

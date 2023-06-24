@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import {Imagess} from "@/constants/imagess";
+import { Imagess } from "@/constants/imagess";
 import Link from "next/link";
 
 const Banner = () => {
@@ -31,7 +31,7 @@ const Banner = () => {
             </Link>
           </div>
         </div>
-        <div className="hidden flex-1 lg:flex  lg:p-16 justify-end items-end">
+        <div className="hidden flex-1 lg:flex  lg:p-16 justify-end items-end bg-transparent">
           <Image
             src={Imagess.splashPaint}
             alt="home page image"

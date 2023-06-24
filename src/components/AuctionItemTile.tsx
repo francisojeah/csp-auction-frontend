@@ -1,13 +1,9 @@
-import { Imagess } from "@/constants/imagess";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
 import { AuctionItemProps } from "@/store/interfaces/auctionItem.interface";
-
 import { FaGavel } from "react-icons/fa";
-import Link from "next/link";
-import { RootState } from "@/store/store";
-import { useSelector } from "react-redux";
 import { useSession } from "next-auth/react";
+import ImageSpinner from "./ImageSpinner";
 
 const AuctionItemTile: React.FC<AuctionItemProps> = ({
   title,
@@ -19,9 +15,14 @@ const AuctionItemTile: React.FC<AuctionItemProps> = ({
   bidder,
 }) => {
   const { data: session } = useSession();
+  const [loading, setLoading] = useState(true);
+  const handleLoadingComplete = () => {
+    setLoading(false);
+  };
   return (
     <div className="bg-white shadow-1 p-5 rounded-lg  w-full max-w-[352px] mx-auto cursor-pointer hover:shadow-2xl transition ">
       <div className="flex-none rounded-lg border overflow-hidden shadow-lg bg-gray-200 order-1 h-72  justify-self-center self-center mb-8">
+        {loading && <ImageSpinner />}
         <Image
           src={photo || ""}
           alt="Auction Item image"
@@ -31,6 +32,7 @@ const AuctionItemTile: React.FC<AuctionItemProps> = ({
           quality={100}
           className="w-full h-full object-cover"
           priority={true}
+          onLoadingComplete={handleLoadingComplete}
         />
       </div>
       <div className="mb-4 flex justify-between flex-row jus text-sm">

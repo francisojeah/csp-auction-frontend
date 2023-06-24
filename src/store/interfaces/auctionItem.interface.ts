@@ -9,6 +9,8 @@ export interface AuctionItemProps {
     minimumBid?: number;
     currentBid?: number;
     bidder?: string;
+    bidderPhone?: string;
+    bidderName?: string;
     isOpened?: boolean;
 }
 

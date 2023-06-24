@@ -25,7 +25,7 @@ const CountdownTimer: React.FC<{ eventTime: Moment }> = ({ eventTime }) => {
         );
         setIsEventOngoing(false);
       } else {
-        const eventEndTime = moment(eventTime).add(7, "days");
+        const eventEndTime = moment(eventTime).add(14, "days");
         const eventDuration = moment.duration(eventEndTime.diff(now));
         const days = Math.floor(eventDuration.asDays());
         const hours = eventDuration.hours().toString().padStart(2, "0");

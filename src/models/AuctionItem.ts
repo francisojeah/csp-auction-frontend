@@ -7,6 +7,8 @@ const AuctionItemSchema = new Schema({
     minimumBid: { type: Number, required: true },
     currentBid: Number,
     bidder: String,
+    bidderPhone: String,
+    bidderName: String,
     isOpened: { type: Boolean, required: true },
 });
 

@@ -15,7 +15,7 @@ export default async function handler(
     const { method } = req;
 
     await mongooseConnect();
-    
+
     const session = await getServerSession(req, res, authOptions);
 
     if (method === 'GET') {
@@ -26,19 +26,19 @@ export default async function handler(
     }
 
     if (method === 'POST') {
-        const { author, description, title, isOpened, currentBid, minimumBid, bidder, photo }: AuctionItemProps = req.body;
+        const { author, description, title, isOpened, currentBid, minimumBid, bidder, bidderName, bidderPhone, photo }: AuctionItemProps = req.body;
 
         const auctionItemDoc = await AuctionItem.create({
-            author, description, title, isOpened, currentBid, minimumBid, bidder, photo
+            author, description, title, isOpened, currentBid, minimumBid, bidder, bidderName, bidderPhone, photo
         })
         res.json(auctionItemDoc);
     }
 
     if (method === 'PUT') {
-        const { author, description, title, isOpened, currentBid, minimumBid, bidder, photo, _id }: any = req.body;
+        const { author, description, title, isOpened, currentBid, minimumBid, bidder, bidderName, bidderPhone, photo, _id }: any = req.body;
 
         await AuctionItem.updateOne({ _id }, {
-            author, description, title, isOpened, currentBid, minimumBid, bidder, photo
+            author, description, title, isOpened, currentBid, minimumBid, bidder, photo, bidderName, bidderPhone,
         })
         res.json(true);
     }

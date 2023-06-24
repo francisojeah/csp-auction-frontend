@@ -28,6 +28,8 @@ if (process.env.NODE_ENV === "development") {
     // In production mode, it's best to not use a global variable.
     client = new MongoClient(uri, options);
     clientPromise = client.connect();
+
+    
 }
 
 // Export a module-scoped MongoClient promise. By doing this in a

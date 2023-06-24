@@ -1,11 +1,7 @@
-const backgroundImage = "/assets/images/backgroungimage.jpg";
-const blueCool = "/assets/images/bluecool.jpg";
-const paintBrush = "/assets/images/paintBrush.jpg";
 const splashPaint = "/assets/images/splashpaint.jpg";
-const whiteTile = "/assets/images/whitetile.jpg";
-const CspLogo = "/assets/images/csplogo.png";
-const PauLogo = "/assets/images/paulogo.png";
-const YsmaLogo = "/assets/images/ysmalogo.png";
+const CspLogo = "/assets/images/csplogo.jpg";
+const PauLogo = "/assets/images/paulogo.jpg";
+const YsmaLogo = "/assets/images/ysmalogo.jpg";
 const Csp1 = "/assets/images/1.jpg";
 const Csp2 = "/assets/images/2.jpg";
 const Csp3 = "/assets/images/3.jpg";
@@ -35,13 +31,9 @@ const Csp26 = "/assets/images/26.jpg";
 const Csp27 = "/assets/images/27.jpg";
 const Csp28 = "/assets/images/28.jpg";
 export const Imagess = {
-    backgroundImage,
-    blueCool,
     PauLogo,
     YsmaLogo,
-    paintBrush,
     splashPaint,
-    whiteTile,
     CspLogo,
     Csp1,
     Csp14,

@@ -1,5 +1,5 @@
 import React from "react";
-// import Meta from "./Meta";
+import Meta from "./Meta";
 import { Open_Sans } from "next/font/google";
 
 const openSans = Open_Sans({
@@ -10,7 +10,7 @@ const openSans = Open_Sans({
 const Layout = ({ children }: any) => {
   return (
     <main className={`${openSans.className} font-sans`}>
-      {/* <Meta /> */}
+      <Meta />
 
       <div className="">{children}</div>
     </main>
