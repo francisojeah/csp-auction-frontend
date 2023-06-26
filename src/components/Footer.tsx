@@ -8,12 +8,10 @@ const Footer = () => {
       <div className="flex flex-col max-w-[1240px] px-4 py-1 mx-auto justify-between sm:flex-row text-center  border-t ">
         <a href="https://linktr.ee/francisojeah" target="_blank">
           <p className="py-3 flex justify-center font-semibold">
-            <span className="mr-1">&#169;</span>
-            <span className="flex mr-1">Mirrow</span>{" "}
+            <span className="flex mr-1">Powered by Mirrow</span>{" "}
             <span className="mr-3">
               <MirrowIcon />
             </span>
-            <span className="">2023</span>
           </p>
         </a>
         <div className="flex justify-between sm:w-[300px] pt-4 text-2xl">
