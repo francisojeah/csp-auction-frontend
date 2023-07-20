@@ -10,6 +10,9 @@ const adminEmails = ['csp@pau.edu.ng']
 
 export const authOptions: NextAuthOptions = {
     secret: process.env.SECRET,
+    session: {
+        maxAge: 1800
+    },
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID || '',

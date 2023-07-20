@@ -32,6 +32,7 @@ const Bids = () => {
       <table className="border-2 border-black m-6 p-6">
         <thead>
           <tr>
+            <td className="border-2 border-black">id</td>
             <td className="border-2 border-black">Title</td>
             <td className="border-2 border-black">Bidder</td>
             <td className="border-2 border-black">Email</td>
@@ -42,6 +43,7 @@ const Bids = () => {
           {items &&
             items.map((item: any, index: any) => (
               <tr className="border-2 border-black" key={index}>
+                <td className="border-2 border-black">{item.photo}</td>
                 <td className="border-2 border-black">{item.title}</td>
                 <td className="border-2 border-black">{item.bidderName}</td>
                 <td className="border-2 border-black">{item.bidder}</td>

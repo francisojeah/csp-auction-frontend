@@ -167,7 +167,7 @@ const AuctionItemm = () => {
   };
 
   const submitt3 = () => {
-    setTitle("Bid is Over");
+    setTitle("Bidding for this artwork is over");
     setMessagee("The Item has already been sold to the highest bidder");
     setButtonText("Okay");
     openModal();
