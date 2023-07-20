@@ -35,6 +35,13 @@ const sendEmail = async (bidder: any, title: any, bid: any) => {
   }
 };
 
+const formatPrice = (price: any) => {
+  return price.toLocaleString("en-US", {
+    style: "currency",
+    currency: "NGN",
+  });
+};
+
 const sendEmail1 = async (bidder: any, title: any) => {
   try {
     const response = await axios.post("api/mailer", {
@@ -148,7 +155,6 @@ const AuctionItemm = () => {
     );
     setButtonText("Continue");
     openModal();
-    
   };
 
   const submitt2 = () => {
@@ -158,7 +164,6 @@ const AuctionItemm = () => {
     );
     setButtonText("Try Again");
     openModal();
-
   };
 
   const submitt3 = () => {
@@ -297,7 +302,7 @@ const AuctionItemm = () => {
                         <FaGavel />
                       </span>
                     </p>
-                    <p>N {items.currentBid}</p>
+                    <p>{formatPrice(items.currentBid)}</p>
                   </div>
                   <div className=" flex flex-col">
                     <p className="text-[#0b469c] flex gap-1">
@@ -306,7 +311,7 @@ const AuctionItemm = () => {
                         <FaGavel />
                       </span>
                     </p>
-                    <p>N {items.minimumBid}</p>
+                    <p>{formatPrice(items.minimumBid)}</p>
                   </div>
                 </div>
                 <div className="flex lg:flex-row items-center gap-8">
@@ -365,7 +370,5 @@ const AuctionItemm = () => {
     </div>
   );
 };
-
-
 
 export default AuctionItemm;

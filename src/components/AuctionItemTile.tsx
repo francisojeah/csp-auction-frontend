@@ -5,6 +5,13 @@ import { FaGavel } from "react-icons/fa";
 import { useSession } from "next-auth/react";
 import ImageSpinner from "./ImageSpinner";
 
+const formatPrice = (price: any) => {
+  return price.toLocaleString("en-US", {
+    style: "currency",
+    currency: "NGN",
+  });
+};
+
 const AuctionItemTile: React.FC<AuctionItemProps> = ({
   title,
   author,
@@ -19,6 +26,7 @@ const AuctionItemTile: React.FC<AuctionItemProps> = ({
   const handleLoadingComplete = () => {
     setLoading(false);
   };
+
   return (
     <div className="bg-white shadow-1 p-5 rounded-lg  w-full max-w-[352px] mx-auto cursor-pointer hover:shadow-2xl transition ">
       <div className="flex-none rounded-lg border overflow-hidden shadow-lg bg-gray-200 order-1 h-72  justify-self-center self-center mb-8">
@@ -67,7 +75,7 @@ const AuctionItemTile: React.FC<AuctionItemProps> = ({
               <FaGavel />
             </span>
           </p>
-          <p>N {currentBid}</p>
+          <p>{formatPrice(currentBid)}</p>
         </div>
         <div className=" flex flex-col">
           <p className="text-[#0b469c] flex gap-1">
@@ -76,7 +84,7 @@ const AuctionItemTile: React.FC<AuctionItemProps> = ({
               <FaGavel />
             </span>
           </p>
-          <p>N {minimumBid}</p>
+          <p>{formatPrice(minimumBid)}</p>
         </div>
       </div>
       <div className="bg-[#0b469c] hover:bg-[#0a3576] text-white px-4 py-3 rounded-xl transition flex items-center justify-center">

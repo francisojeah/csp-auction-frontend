@@ -12,7 +12,7 @@ const Homee = () => {
     <>
       <NavBar />
       <Banner />
-      <CountdownTimer eventTime={moment("2023-06-17 12:00:00")} />
+      {/* <CountdownTimer eventTime={moment("2023-06-17 12:00:00")} /> */}
       <AutionItemList />
       <Sponsors />
       <Footer />
