@@ -56,8 +56,9 @@ const ModalWelcome = ({
                   </p>
                   <ul className="m-4  text-lg leading-relaxed list-disc">
                     <li>
-                      <span className="font-semibold"> Log In:</span> Click "Log
-                      In" at the top right corner to log in with Google.
+                      <span className="font-semibold"> Log In:</span> Click
+                      &quote;Log In&quote; at the top right corner to log in
+                      with Google.
                     </li>
                     <li>
                       <span className="font-semibold">Explore:</span> Discover a
@@ -66,7 +67,7 @@ const ModalWelcome = ({
                     <li>
                       <span className="font-semibold">Place Bids:</span> Enter
                       your desired bid amount, which should be higher than the
-                      starting bid. You'd also be required to provide your
+                      starting bid. You will also be required to provide your
                       contact details - phone number{" "}
                     </li>
                     <li>
@@ -75,7 +76,7 @@ const ModalWelcome = ({
                       contacted with the payment details. Thank you!{" "}
                     </li>
                   </ul>
-                  
+
                   <p className="my-2  text-lg leading-relaxed">
                     Receive email notifications about your bids and any
                     outbidding.
