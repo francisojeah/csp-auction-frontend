@@ -57,11 +57,6 @@ function AdminNavBar() {
         title: "Bids",
         link: "bids",
       },
-
-      {
-        title: "Settings",
-        link: "settings",
-      },
     ];
   }, []);
   useEffect(() => {

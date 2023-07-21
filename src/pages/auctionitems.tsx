@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Custom404 from "./404";
-import NavBar from "@/components/NavBar";
 
 const AuctionItems = () => {
   const { data: session }: any = useSession();

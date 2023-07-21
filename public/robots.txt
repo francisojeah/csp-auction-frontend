@@ -1,5 +1,7 @@
 # *
 User-agent: *
+Disallow: /bids
+Disallow: /auctionitems/*
 Allow: /
 
 # Host

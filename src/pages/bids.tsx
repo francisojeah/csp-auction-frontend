@@ -4,28 +4,36 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import Custom404 from "./404";
 
 const Bids = () => {
   const { data: session }: any = useSession();
   const [items, SetItems] = useState([]);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
-  // useEffect(() => {
-  //   const checkAdminStatus = async () => {
-  //     if (session) {
 
-  //     }
-  //   }
-  //   if (session == null || !session) {
-  //   } else if (session?.user?.role !== "admin") {
-  //     router.push("/");
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (session && session?.user?.role) {
+      setLoading(false);
+    }
+  }, [session]);
+
+  useEffect(() => {
+    if (!loading && session?.user?.role !== "admin") {
+      router.push("/");
+    }
+  }, [loading, session?.user?.role, router]);
+
   useEffect(() => {
     axios.get("/api/auctionitems").then((response) => {
       SetItems(response.data);
     });
   }, []);
-  return (
+  return loading ? (
+    <>
+      <Custom404 />
+    </>
+  ) : session?.user?.role === "admin" ? (
     <>
       <AdminNavBar />
 
@@ -53,7 +61,7 @@ const Bids = () => {
         </tbody>
       </table>
     </>
-  );
+  ) : null;
 };
 
 export default Bids;
