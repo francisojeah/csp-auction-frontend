@@ -3,7 +3,7 @@ import Homee from "./homee";
 import ModalWelcome from "@/components/ModalWelcome";
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
     setShowModal(true);
@@ -17,15 +17,15 @@ export default function Home() {
     closeModal();
   };
 
-  // useEffect(() => {
-  //   const visitedBefore = localStorage.getItem("visitedBefore");
+  useEffect(() => {
+    const visitedBefore = sessionStorage.getItem("modalShownBefore");
 
-  //   if (!visitedBefore) {
-  //     setShowModal(true);
+    if (!visitedBefore) {
+      setShowModal(true);
 
-  //     localStorage.setItem("visitedBefore", "true");
-  //   }
-  // }, []);
+      sessionStorage.setItem("modalShownBefore", "true");
+    }
+  }, []);
   return (
     <main>
       <Homee />

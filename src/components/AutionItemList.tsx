@@ -36,7 +36,9 @@ const AutionItemList = () => {
           CSP x YSMA Silent Art Auction{" "}
         </div>
         {isLoading ? (
-          <Spinner />
+          <div className="w-[100vw] h-[100vh]">
+            <Spinner />
+          </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-14">
             {items &&

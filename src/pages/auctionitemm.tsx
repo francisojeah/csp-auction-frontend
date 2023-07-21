@@ -243,7 +243,9 @@ const AuctionItemm = () => {
     <div className="w-full h-full">
       <NavBar />
       {loading ? (
-        <Spinner />
+        <div className="w-[100vw] h-[100vh]">
+          <Spinner />
+        </div>
       ) : (
         <>
           {showNotification && (

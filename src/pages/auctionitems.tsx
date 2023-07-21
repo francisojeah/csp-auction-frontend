@@ -4,28 +4,37 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import Custom404 from "./404";
+import NavBar from "@/components/NavBar";
 
 const AuctionItems = () => {
   const { data: session }: any = useSession();
   const [items, SetItems] = useState([]);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  //   useEffect(() => {
-  //       if (session !== null) {
-  //       if (!session) {
-  //         router.push("/");
-  //       } else if (session?.user?.role !== "admin") {
-  //         router.push("/");
-  //       }
-  //     }
-  //   }, [session, router]);
+  useEffect(() => {
+    if (session && session?.user?.role) {
+      setLoading(false);
+    }
+  }, [session]);
+
+  useEffect(() => {
+    if (!loading && session?.user?.role !== "admin") {
+      router.push("/");
+    }
+  }, [loading, session?.user?.role, router]);
 
   useEffect(() => {
     axios.get("/api/auctionitems").then((response) => {
       SetItems(response.data);
     });
   }, []);
-  return (
+  return loading ? (
+    <>
+      <Custom404 />
+    </>
+  ) : session?.user?.role === "admin" ? (
     <>
       <AdminNavBar />
 
@@ -39,6 +48,7 @@ const AuctionItems = () => {
       <table className="basic mt-2">
         <thead>
           <tr>
+            <td></td>
             <td>Title</td>
             <td></td>
           </tr>
@@ -47,6 +57,7 @@ const AuctionItems = () => {
           {items &&
             items.map((item: any, index: any) => (
               <tr key={index}>
+                <td>{item.photo}</td>
                 <td>{item.title}</td>
                 <td>
                   {" "}
@@ -73,7 +84,7 @@ const AuctionItems = () => {
         </tbody>
       </table>
     </>
-  );
+  ) : null;
 };
 
 export default AuctionItems;

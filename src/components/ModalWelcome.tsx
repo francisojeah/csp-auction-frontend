@@ -15,7 +15,7 @@ const ModalWelcome = ({
     <>
       {showModal ? (
         <>
-          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none p-4">
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
@@ -29,7 +29,7 @@ const ModalWelcome = ({
                     </span>
                   </button>
                 </div>
-                <div className="relative p-6 flex-auto">
+                <div className="relative p-6 flex-auto overflow-y-auto max-h-[60vh]">
                   <p className=" text-lg leading-relaxed">
                     Welcome to the CSPxYSMA silent auction platform! Explore a
                     captivating collection of exquisite artworks. To participate
@@ -57,7 +57,7 @@ const ModalWelcome = ({
                   <ul className="m-4  text-lg leading-relaxed list-disc">
                     <li>
                       <span className="font-semibold"> Log In:</span> Click
-                      &quote;Log In&quote; at the top right corner to log in
+                      &quot;Log In&quot; at the top right corner to log in
                       with Google.
                     </li>
                     <li>

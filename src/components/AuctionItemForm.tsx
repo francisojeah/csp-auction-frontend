@@ -19,9 +19,9 @@ export default function AuctionItemForm({
   bidderPhone: existingbidderPhone,
   bidderName: existingbidderName,
 }: any) {
-  const bidder = existingbidder || "";
-  const bidderPhone = existingbidderPhone || "";
-  const bidderName = existingbidderName || "";
+  const [bidder, setBidder] = useState(existingbidder || "");
+  const [bidderPhone, setBidderPhone] = useState(existingbidderPhone || "");
+  const [bidderName, setBidderName] = useState(existingbidderName || "");
   const [title, setTitle] = useState(existingTitle || "");
   const [description, setDescription] = useState(existingDescription || "");
   const [author, setAuthor] = useState(assignedauthor || "");
@@ -42,6 +42,30 @@ export default function AuctionItemForm({
   //       }
   //     }
   //   }, [session, router]);
+
+  useEffect(() => {
+    setBidder(existingbidder);
+    setTitle(existingTitle);
+    setAuthor(assignedauthor);
+    setBidderName(existingbidderName);
+    setBidderPhone(existingbidderPhone);
+    setCurrentBid(existingcurrentBid);
+    setDescription(existingDescription);
+    setMinimumBid(assignedminimumBid);
+    setisOpened(existingisOpened);
+    setPhoto(existingphoto);
+  }, [
+    existingbidder,
+    existingTitle,
+    existingDescription,
+    existingbidderName,
+    existingbidderPhone,
+    existingcurrentBid,
+    existingisOpened,
+    assignedauthor,
+    assignedminimumBid,
+    existingphoto
+  ]);
 
   async function saveAuctionItem(e: any) {
     e.preventDefault();

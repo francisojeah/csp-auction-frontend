@@ -6,12 +6,14 @@ import clientPromise from "@/lib/mongodb";
 import { NextAuthOptions, Session } from "next-auth";
 import { NextApiRequest, NextApiResponse } from "next";
 
-const adminEmails = ['csp@pau.edu.ng']
+const adminEmails = [process.env.ADMIN_EMAIL_1, process.env.ADMIN_EMAIL_2, process.env.ADMIN_EMAIL_3, process.env.ADMIN_EMAIL_4, process.env.ADMIN_EMAIL_5]
 
 export const authOptions: NextAuthOptions = {
     secret: process.env.SECRET,
     session: {
-        maxAge: 1800
+        maxAge: 3600,
+        updateAge: 600,
+
     },
     providers: [
         GoogleProvider({
@@ -21,7 +23,7 @@ export const authOptions: NextAuthOptions = {
     ],
     adapter: MongoDBAdapter(clientPromise),
     callbacks: {
-        session: ({ session, user }: any): Promise<any> => {
+        session: async ({ session, user }: any): Promise<any> => {
             session.user.role = 'user';
             if (adminEmails.includes(session?.user?.email)) {
                 session.user.role = 'admin';
